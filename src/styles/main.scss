@@ -1,0 +1,61 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+body{
+  @apply dark:bg-neutral-900 bg-slate-100 text-black dark:text-white transition-all;
+}
+
+html,
+body{
+  height: 100vh;
+  background-color: rgb(31, 31, 31);
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+      display: none;
+  }
+  .no-scrollbar {
+      -ms-overflow-style: none;  /* IE and Edge */
+      scrollbar-width: none;  /* Firefox */
+}
+}
+
+::-webkit-scrollbar {
+  width: 0.6rem;
+  height: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  ::-webkit-scrollbar {
+  width: 0.2rem;
+  height: 0.5rem;
+}
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+.dark ::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-neutral-300;
+  border-radius: 0.5rem;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  @apply bg-neutral-600;
+  border-radius: 0.5rem;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-neutral-300;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  @apply bg-neutral-500;
+}
