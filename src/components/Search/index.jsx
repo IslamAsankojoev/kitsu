@@ -3,6 +3,7 @@ import { useAutoAnimate } from '@formkit/auto-animate/react'
 import ky from '../../config/ky.config.js'
 import debounce from 'lodash.debounce'
 import { Frown, Loader } from 'lucide-react'
+import { Link } from 'react-router-dom'
 
 const Search = () => {
   const [data, setData] = React.useState([])
@@ -47,7 +48,7 @@ const Search = () => {
 
   return (
     <>
-      <div className='flex justify-center relative' ref={parent}>
+      <Link to={`/anime/${data.id}`} className='flex justify-center relative' ref={parent} >
         <input
           type='text'
           placeholder='Search'
@@ -66,7 +67,7 @@ const Search = () => {
               <a href="#" key={anime.id} className='rounded-md flex gap-3 items-center bg-neutral-100/70 dark:bg-neutral-900/90 p-2 border border-neutral-200 dark:border-neutral-800 hover:bg-neutral-100 dark:hover:bg-neutral-800'>
                 <img src={anime.attributes.posterImage.small} alt="" className='h-16 w-auto rounded-sm'/>
                 <div className='flex-col gap-3'>
-                  <p className='font-bold text-base leading-4 mb-1'>{anime.attributes.titles.en || anime.attributes.titles.en_jp || anime.attributes.titles.ja_jp}</p>
+                  <p className='font-normal text-base leading-4 mb-1'>{anime.attributes.titles.en || anime.attributes.titles.en_jp || anime.attributes.titles.ja_jp}</p>
                   <p className='line-clamp-2 text-neutral-500 dark:text-neutral-400 text-sm leading-4'>{anime.attributes.description}</p>
                 </div>
               </a>
@@ -75,7 +76,7 @@ const Search = () => {
             )}
           </div>
         )}
-      </div>
+      </Link>
     </>
   )
 }

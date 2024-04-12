@@ -1,10 +1,11 @@
 import React from 'react'
 import { Star, Film } from 'lucide-react'
 import colors from 'tailwindcss/colors'
+import { Link } from 'react-router-dom'
 
 export const Card = ({anime}) => {
   return (
-    <a href='#' className='rounded-xl bg-neutral-100 shadow-md dark:shadow-none dark:bg-neutral-900/90 dark:hover:bg-neutral-800/80 transition-all overflow-hidden block border border-neutral-100 dark:border-neutral-700 '>
+    <Link to={`/anime/${anime.id}`} className='rounded-xl bg-neutral-100 shadow-md hover:shadow-lg dark:shadow-none dark:bg-neutral-900/90 dark:hover:bg-neutral-800/80 transition-all overflow-hidden block border border-neutral-100 dark:border-neutral-700 '>
       <div className='relative'>
         <img src={anime.attributes.posterImage.large} alt="" className='w-full h-72 object-cover object-top'/>
         <div className='flex items-center p-2 absolute top-0 left-0'>
@@ -21,6 +22,6 @@ export const Card = ({anime}) => {
           <span className='text-sm ml-1'>{anime.attributes.episodeCount} - episodes </span>
         </div>
       </div>
-    </a>
+    </Link>
   )
 }

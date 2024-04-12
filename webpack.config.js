@@ -40,8 +40,10 @@ module.exports = {
   output: {
     filename: 'main.js',
     path: path.resolve(__dirname, 'dist'),
+    publicPath: '/',
     assetModuleFilename: 'assets/[hash][ext][query]',
     clean: true,
+    chunkFilename: '[id].js',
   },
   module: {
     rules: [

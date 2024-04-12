@@ -16,6 +16,12 @@ const Home = () => {
         {data?.map((anime) => {
           return <Card key={anime.id} anime={anime} />;
         })}
+        {data?.map((anime) => {
+          return <Card key={anime.id} anime={anime} />;
+        })}
+        {data?.map((anime) => {
+          return <Card key={anime.id} anime={anime} />;
+        })}
       </div>
     </>
   );

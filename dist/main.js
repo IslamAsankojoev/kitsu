@@ -4401,55 +4401,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_Pages_Anime_AnimeScreen_jsx__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/Pages/Anime/AnimeScreen.jsx */ "./src/components/Pages/Anime/AnimeScreen.jsx");
 /* harmony import */ var tailwindcss_colors__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! tailwindcss/colors */ "./node_modules/tailwindcss/colors.js");
 /* harmony import */ var tailwindcss_colors__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(tailwindcss_colors__WEBPACK_IMPORTED_MODULE_8__);
-function _slicedToArray(arr, i) {
-  return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest();
-}
-function _nonIterableRest() {
-  throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
-}
-function _unsupportedIterableToArray(o, minLen) {
-  if (!o) return;
-  if (typeof o === "string") return _arrayLikeToArray(o, minLen);
-  var n = Object.prototype.toString.call(o).slice(8, -1);
-  if (n === "Object" && o.constructor) n = o.constructor.name;
-  if (n === "Map" || n === "Set") return Array.from(o);
-  if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);
-}
-function _arrayLikeToArray(arr, len) {
-  if (len == null || len > arr.length) len = arr.length;
-  for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i];
-  return arr2;
-}
-function _iterableToArrayLimit(r, l) {
-  var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"];
-  if (null != t) {
-    var e,
-      n,
-      i,
-      u,
-      a = [],
-      f = !0,
-      o = !1;
-    try {
-      if (i = (t = t.call(r)).next, 0 === l) {
-        if (Object(t) !== t) return;
-        f = !1;
-      } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0);
-    } catch (r) {
-      o = !0, n = r;
-    } finally {
-      try {
-        if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return;
-      } finally {
-        if (o) throw n;
-      }
-    }
-    return a;
-  }
-}
-function _arrayWithHoles(arr) {
-  if (Array.isArray(arr)) return arr;
-}
 
 
 
@@ -4477,21 +4428,6 @@ var BrowserRouter = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_9__.createBrows
   element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Pages_About_jsx__WEBPACK_IMPORTED_MODULE_5__["default"], null)
 }]);
 var App = function App() {
-  var _React$useState = react__WEBPACK_IMPORTED_MODULE_0___default().useState(true),
-    _React$useState2 = _slicedToArray(_React$useState, 2),
-    darkMode = _React$useState2[0],
-    setDarkMode = _React$useState2[1];
-  react__WEBPACK_IMPORTED_MODULE_0___default().useEffect(function () {
-    document.querySelector('html').classList.add('dark');
-  }, [darkMode]);
-  react__WEBPACK_IMPORTED_MODULE_0___default().useEffect(function () {
-    document.addEventListener('mousemove', function (e) {
-      var body = document.querySelector('body');
-      body.style.background = "radial-gradient(circle at ".concat(e.clientX, "px ").concat(e.clientY, "px, ").concat((tailwindcss_colors__WEBPACK_IMPORTED_MODULE_8___default().neutral)[800], " 0%, ").concat((tailwindcss_colors__WEBPACK_IMPORTED_MODULE_8___default().neutral)[900], " 9%, ").concat((tailwindcss_colors__WEBPACK_IMPORTED_MODULE_8___default().neutral)[900], " 100%)");
-      body.style.backgroundSize = '100% 100%';
-      body.style.backgroundRepeat = 'no-repeat';
-    });
-  }, []);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "p-0"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Header_index_jsx__WEBPACK_IMPORTED_MODULE_3__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
@@ -4556,7 +4492,7 @@ var Card = function Card(_ref) {
   var anime = _ref.anime;
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
     href: "#",
-    className: "rounded-xl bg-neutral-900/90 hover:bg-neutral-800/80 transition-all overflow-hidden block border border-neutral-700 hover:border-neutral-600 "
+    className: "rounded-xl bg-neutral-100 shadow-md hover:shadow-lg dark:shadow-none dark:bg-neutral-900/90 dark:hover:bg-neutral-800/80 transition-all overflow-hidden block border border-neutral-100 dark:border-neutral-700 "
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "relative"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
@@ -4576,14 +4512,13 @@ var Card = function Card(_ref) {
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h4", {
     className: "font-bold"
   }, anime.attributes.titles.en || anime.attributes.titles.en_jp || anime.attributes.titles.ja_jp), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
-    className: "line-clamp-3 text-neutral-400"
+    className: "line-clamp-3 text-neutral-600 dark:text-neutral-400"
   }, anime.attributes.description), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    className: "flex items-center mt-2"
+    className: "flex text-neutral-600 dark:text-neutral-200 items-center mt-2"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(lucide_react__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    className: "text-neutral-200",
     size: 16
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", {
-    className: "text-neutral-200 text-sm ml-1"
+    className: "text-sm ml-1"
   }, anime.attributes.episodeCount, " - episodes "))));
 };
 
@@ -4603,6 +4538,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _Search_index_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../Search/index.jsx */ "./src/components/Search/index.jsx");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/sun.js");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/moon.js");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
+function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
 
 
 var menuItems = [{
@@ -4619,8 +4563,21 @@ var menuItems = [{
   url: '/about'
 }];
 var Header = function Header() {
+  var _React$useState = react__WEBPACK_IMPORTED_MODULE_0___default().useState(localStorage.getItem('theme') || 'light'),
+    _React$useState2 = _slicedToArray(_React$useState, 2),
+    theme = _React$useState2[0],
+    setTheme = _React$useState2[1];
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    localStorage.setItem('theme', theme);
+    var body = document.querySelector('body');
+    if (theme === 'dark') {
+      body.classList.add('dark');
+    } else {
+      body.classList.remove('dark');
+    }
+  }, [theme]);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    className: "bg-neutral-200 dark:bg-neutral-900/90 shadow-xl p-4 backdrop-blur-md sticky top-0 z-10"
+    className: "bg-neutral-100 dark:bg-neutral-900/90 shadow-sm p-4 backdrop-blur-md sticky top-0 z-10 shadow-neutral-200 dark:shadow-neutral-800"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "container mx-auto flex gap-10 justify-between items-center"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
@@ -4635,7 +4592,20 @@ var Header = function Header() {
       href: item.url,
       className: "text-neutral-700 dark:text-neutral-200 hover:text-neutral-900 dark:hover:text-neutral-100"
     }, item.name);
-  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Search_index_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], null))));
+  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+    className: "flex gap-2"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
+    onClick: function onClick() {
+      setTheme(theme === 'dark' ? 'light' : 'dark');
+    },
+    className: "flex items-center bg-neutral-200 dark:bg-neutral-800 p-2 rounded-md hover:bg-neutral-300 dark:hover:bg-neutral-700 transition-all"
+  }, theme === 'dark' ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(lucide_react__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    size: 20,
+    strokeWidth: 1.25
+  }) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(lucide_react__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    size: 20,
+    strokeWidth: 1.25
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Search_index_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], null))));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Header);
 
@@ -4727,6 +4697,16 @@ var Home = function Home() {
   }, "Anime"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "grid grid-cols-5 gap-10"
   }, data === null || data === void 0 ? void 0 : data.map(function (anime) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Card_index_jsx__WEBPACK_IMPORTED_MODULE_2__.Card, {
+      key: anime.id,
+      anime: anime
+    });
+  }), data === null || data === void 0 ? void 0 : data.map(function (anime) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Card_index_jsx__WEBPACK_IMPORTED_MODULE_2__.Card, {
+      key: anime.id,
+      anime: anime
+    });
+  }), data === null || data === void 0 ? void 0 : data.map(function (anime) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Card_index_jsx__WEBPACK_IMPORTED_MODULE_2__.Card, {
       key: anime.id,
       anime: anime
@@ -4850,23 +4830,25 @@ var Search = function Search() {
       setValue(e.target.value);
       handleSearchChange(e.target.value);
     },
-    className: "rounded-md bg-neutral-800 px-4 py-1 focus:outline-none"
+    className: "rounded-md bg-neutral-200 dark:bg-neutral-800 px-4 py-1 focus:outline-none w-72"
   }), open && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    className: "flex absolute w-96 h-[500px] overflow-scroll bg-neutral-950/95 backdrop-blur-md rounded-xl top-10 right-0 p-5 flex-col gap-2 no-scrollbar",
+    className: "flex absolute w-96 h-[500px] overflow-scroll bg-neutral-300/95 dark:bg-neutral-950/95 backdrop-blur-md rounded-xl top-12 right-0 p-5 flex-col gap-2 no-scrollbar shadow-lg dark:shadow-none transition-all z-10",
     ref: Ref
   }, !!data.length ? data.map(function (anime) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
       href: "#",
       key: anime.id,
-      className: "rounded-md flex gap-2 items-center bg-neutral-800/60 p-2 border border-neutral-800 hover:bg-neutral-800"
+      className: "rounded-md flex gap-3 items-center bg-neutral-100/70 dark:bg-neutral-900/90 p-2 border border-neutral-200 dark:border-neutral-800 hover:bg-neutral-100 dark:hover:bg-neutral-800"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
       src: anime.attributes.posterImage.small,
       alt: "",
       className: "h-16 w-auto rounded-sm"
-    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
-      className: "font-bold text-base leading-4 mb-1"
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+      className: "flex-col gap-3"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
+      className: "font-normal text-base leading-4 mb-1"
     }, anime.attributes.titles.en || anime.attributes.titles.en_jp || anime.attributes.titles.ja_jp), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
-      className: "line-clamp-2 text-neutral-400 text-sm leading-4"
+      className: "line-clamp-2 text-neutral-500 dark:text-neutral-400 text-sm leading-4"
     }, anime.attributes.description)));
   }) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
     className: "text-neutral-200 flex gap-2 items-center justify-center my-10"
@@ -5451,8 +5433,8 @@ video {
 .top-0 {
   top: 0px;
 }
-.top-10 {
-  top: 2.5rem;
+.top-12 {
+  top: 3rem;
 }
 .z-10 {
   z-index: 10;
@@ -5511,6 +5493,9 @@ video {
 .h-\\[500px\\] {
   height: 500px;
 }
+.w-72 {
+  width: 18rem;
+}
 .w-96 {
   width: 24rem;
 }
@@ -5541,6 +5526,9 @@ video {
 .gap-2 {
   gap: 0.5rem;
 }
+.gap-3 {
+  gap: 0.75rem;
+}
 .space-x-4 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-x-reverse: 0;
   margin-right: calc(1rem * 0);
@@ -5568,34 +5556,31 @@ video {
 .border {
   border-width: 1px;
 }
-.border-neutral-700 {
+.border-neutral-100 {
   --tw-border-opacity: 1;
-  border-color: rgba(64, 64, 64, 1);
-  border-color: rgba(64, 64, 64, var(--tw-border-opacity));
+  border-color: rgba(245, 245, 245, 1);
+  border-color: rgba(245, 245, 245, var(--tw-border-opacity));
 }
-.border-neutral-800 {
+.border-neutral-200 {
   --tw-border-opacity: 1;
-  border-color: rgba(38, 38, 38, 1);
-  border-color: rgba(38, 38, 38, var(--tw-border-opacity));
+  border-color: rgba(229, 229, 229, 1);
+  border-color: rgba(229, 229, 229, var(--tw-border-opacity));
+}
+.bg-neutral-100 {
+  --tw-bg-opacity: 1;
+  background-color: rgba(245, 245, 245, 1);
+  background-color: rgba(245, 245, 245, var(--tw-bg-opacity));
+}
+.bg-neutral-100\\/70 {
+  background-color: rgba(245, 245, 245, 0.7);
 }
 .bg-neutral-200 {
   --tw-bg-opacity: 1;
   background-color: rgba(229, 229, 229, 1);
   background-color: rgba(229, 229, 229, var(--tw-bg-opacity));
 }
-.bg-neutral-800 {
-  --tw-bg-opacity: 1;
-  background-color: rgba(38, 38, 38, 1);
-  background-color: rgba(38, 38, 38, var(--tw-bg-opacity));
-}
-.bg-neutral-800\\/60 {
-  background-color: rgba(38, 38, 38, 0.6);
-}
-.bg-neutral-900\\/90 {
-  background-color: rgba(23, 23, 23, 0.9);
-}
-.bg-neutral-950\\/95 {
-  background-color: rgba(10, 10, 10, 0.95);
+.bg-neutral-300\\/95 {
+  background-color: rgba(212, 212, 212, 0.95);
 }
 .object-cover {
   -o-object-fit: cover;
@@ -5643,6 +5628,9 @@ video {
 .font-extrabold {
   font-weight: 800;
 }
+.font-normal {
+  font-weight: 400;
+}
 .leading-4 {
   line-height: 1rem;
 }
@@ -5659,10 +5647,15 @@ video {
   color: rgba(229, 229, 229, 1);
   color: rgba(229, 229, 229, var(--tw-text-opacity));
 }
-.text-neutral-400 {
+.text-neutral-500 {
   --tw-text-opacity: 1;
-  color: rgba(163, 163, 163, 1);
-  color: rgba(163, 163, 163, var(--tw-text-opacity));
+  color: rgba(115, 115, 115, 1);
+  color: rgba(115, 115, 115, var(--tw-text-opacity));
+}
+.text-neutral-600 {
+  --tw-text-opacity: 1;
+  color: rgba(82, 82, 82, 1);
+  color: rgba(82, 82, 82, var(--tw-text-opacity));
 }
 .text-neutral-700 {
   --tw-text-opacity: 1;
@@ -5674,11 +5667,27 @@ video {
   color: rgba(253, 224, 71, 1);
   color: rgba(253, 224, 71, var(--tw-text-opacity));
 }
-.shadow-xl {
-  --tw-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
-  --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
-  box-shadow: 0 0 rgba(0,0,0,0), 0 0 rgba(0,0,0,0), 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+.shadow-lg {
+  --tw-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
+  box-shadow: 0 0 rgba(0,0,0,0), 0 0 rgba(0,0,0,0), 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 rgba(0,0,0,0)), var(--tw-ring-shadow, 0 0 rgba(0,0,0,0)), var(--tw-shadow);
+}
+.shadow-md {
+  --tw-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
+  box-shadow: 0 0 rgba(0,0,0,0), 0 0 rgba(0,0,0,0), 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 rgba(0,0,0,0)), var(--tw-ring-shadow, 0 0 rgba(0,0,0,0)), var(--tw-shadow);
+}
+.shadow-sm {
+  --tw-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color);
+  box-shadow: 0 0 rgba(0,0,0,0), 0 0 rgba(0,0,0,0), 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 rgba(0,0,0,0)), var(--tw-ring-shadow, 0 0 rgba(0,0,0,0)), var(--tw-shadow);
+}
+.shadow-neutral-200 {
+  --tw-shadow-color: #e5e5e5;
+  --tw-shadow: var(--tw-shadow-colored);
 }
 .filter {
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
@@ -5703,15 +5712,10 @@ video {
       scrollbar-width: none;  /* Firefox */
 }
 
-html, 
-body {
-    height: 100%;
-}
-
 body {
   --tw-bg-opacity: 1;
-  background-color: rgba(241, 245, 249, 1);
-  background-color: rgba(241, 245, 249, var(--tw-bg-opacity));
+  background-color: rgba(250, 250, 250, 1);
+  background-color: rgba(250, 250, 250, var(--tw-bg-opacity));
   --tw-text-opacity: 1;
   color: rgba(0, 0, 0, 1);
   color: rgba(0, 0, 0, var(--tw-text-opacity));
@@ -5775,20 +5779,16 @@ body:where(.dark, .dark *) {
   background-color: rgba(115, 115, 115, var(--tw-bg-opacity));
 }
 
-.hover\\:border-neutral-600:hover {
-  --tw-border-opacity: 1;
-  border-color: rgba(82, 82, 82, 1);
-  border-color: rgba(82, 82, 82, var(--tw-border-opacity));
-}
-
-.hover\\:bg-neutral-800:hover {
+.hover\\:bg-neutral-100:hover {
   --tw-bg-opacity: 1;
-  background-color: rgba(38, 38, 38, 1);
-  background-color: rgba(38, 38, 38, var(--tw-bg-opacity));
+  background-color: rgba(245, 245, 245, 1);
+  background-color: rgba(245, 245, 245, var(--tw-bg-opacity));
 }
 
-.hover\\:bg-neutral-800\\/80:hover {
-  background-color: rgba(38, 38, 38, 0.8);
+.hover\\:bg-neutral-300:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgba(212, 212, 212, 1);
+  background-color: rgba(212, 212, 212, var(--tw-bg-opacity));
 }
 
 .hover\\:text-neutral-900:hover {
@@ -5797,13 +5797,42 @@ body:where(.dark, .dark *) {
   color: rgba(23, 23, 23, var(--tw-text-opacity));
 }
 
+.hover\\:shadow-lg:hover {
+  --tw-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
+  box-shadow: 0 0 rgba(0,0,0,0), 0 0 rgba(0,0,0,0), 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 rgba(0,0,0,0)), var(--tw-ring-shadow, 0 0 rgba(0,0,0,0)), var(--tw-shadow);
+}
+
 .focus\\:outline-none:focus {
   outline: 2px solid transparent;
   outline-offset: 2px;
 }
 
+.dark\\:border-neutral-700:where(.dark, .dark *) {
+  --tw-border-opacity: 1;
+  border-color: rgba(64, 64, 64, 1);
+  border-color: rgba(64, 64, 64, var(--tw-border-opacity));
+}
+
+.dark\\:border-neutral-800:where(.dark, .dark *) {
+  --tw-border-opacity: 1;
+  border-color: rgba(38, 38, 38, 1);
+  border-color: rgba(38, 38, 38, var(--tw-border-opacity));
+}
+
+.dark\\:bg-neutral-800:where(.dark, .dark *) {
+  --tw-bg-opacity: 1;
+  background-color: rgba(38, 38, 38, 1);
+  background-color: rgba(38, 38, 38, var(--tw-bg-opacity));
+}
+
 .dark\\:bg-neutral-900\\/90:where(.dark, .dark *) {
   background-color: rgba(23, 23, 23, 0.9);
+}
+
+.dark\\:bg-neutral-950\\/95:where(.dark, .dark *) {
+  background-color: rgba(10, 10, 10, 0.95);
 }
 
 .dark\\:text-neutral-200:where(.dark, .dark *) {
@@ -5812,11 +5841,45 @@ body:where(.dark, .dark *) {
   color: rgba(229, 229, 229, var(--tw-text-opacity));
 }
 
+.dark\\:text-neutral-400:where(.dark, .dark *) {
+  --tw-text-opacity: 1;
+  color: rgba(163, 163, 163, 1);
+  color: rgba(163, 163, 163, var(--tw-text-opacity));
+}
+
+.dark\\:shadow-none:where(.dark, .dark *) {
+  --tw-shadow: 0 0 rgba(0,0,0,0);
+  --tw-shadow-colored: 0 0 rgba(0,0,0,0);
+  box-shadow: 0 0 rgba(0,0,0,0), 0 0 rgba(0,0,0,0), 0 0 rgba(0,0,0,0);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 rgba(0,0,0,0)), var(--tw-ring-shadow, 0 0 rgba(0,0,0,0)), var(--tw-shadow);
+}
+
+.dark\\:shadow-neutral-800:where(.dark, .dark *) {
+  --tw-shadow-color: #262626;
+  --tw-shadow: var(--tw-shadow-colored);
+}
+
+.dark\\:hover\\:bg-neutral-700:hover:where(.dark, .dark *) {
+  --tw-bg-opacity: 1;
+  background-color: rgba(64, 64, 64, 1);
+  background-color: rgba(64, 64, 64, var(--tw-bg-opacity));
+}
+
+.dark\\:hover\\:bg-neutral-800:hover:where(.dark, .dark *) {
+  --tw-bg-opacity: 1;
+  background-color: rgba(38, 38, 38, 1);
+  background-color: rgba(38, 38, 38, var(--tw-bg-opacity));
+}
+
+.dark\\:hover\\:bg-neutral-800\\/80:hover:where(.dark, .dark *) {
+  background-color: rgba(38, 38, 38, 0.8);
+}
+
 .dark\\:hover\\:text-neutral-100:hover:where(.dark, .dark *) {
   --tw-text-opacity: 1;
   color: rgba(245, 245, 245, 1);
   color: rgba(245, 245, 245, var(--tw-text-opacity));
-}`, "",{"version":3,"sources":["webpack://./src/styles/main.scss"],"names":[],"mappings":"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","sourcesContent":["@import \"tailwindcss/base\";\r\n@import \"tailwindcss/components\";\r\n@import \"tailwindcss/utilities\";\r\n\r\nhtml, \r\nbody {\r\n    height: 100%;\r\n}\r\n\r\nbody{\r\n  @apply dark:bg-neutral-900 bg-slate-100 text-black dark:text-white transition-all;\r\n}\r\n\r\n@layer utilities {\r\n  .no-scrollbar::-webkit-scrollbar {\r\n      display: none;\r\n  }\r\n  .no-scrollbar {\r\n      -ms-overflow-style: none;  /* IE and Edge */\r\n      scrollbar-width: none;  /* Firefox */\r\n}\r\n}\r\n\r\n::-webkit-scrollbar {\r\n  width: 0.6rem;\r\n  height: 0.5rem;\r\n}\r\n\r\n@media (max-width: 768px) {\r\n  ::-webkit-scrollbar {\r\n  width: 0.2rem;\r\n  height: 0.5rem;\r\n}\r\n}\r\n\r\n::-webkit-scrollbar-track {\r\n  @apply bg-transparent;\r\n}\r\n\r\n.dark ::-webkit-scrollbar-track {\r\n  @apply bg-transparent;\r\n}\r\n\r\n::-webkit-scrollbar-thumb {\r\n  @apply bg-neutral-300;\r\n  border-radius: 0.5rem;\r\n}\r\n\r\n.dark ::-webkit-scrollbar-thumb {\r\n  @apply bg-neutral-600;\r\n  border-radius: 0.5rem;\r\n}\r\n\r\n::-webkit-scrollbar-thumb:hover {\r\n  @apply bg-neutral-300;\r\n}\r\n\r\n.dark ::-webkit-scrollbar-thumb:hover {\r\n  @apply bg-neutral-500;\r\n}"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/styles/main.scss"],"names":[],"mappings":"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","sourcesContent":["@import \"tailwindcss/base\";\r\n@import \"tailwindcss/components\";\r\n@import \"tailwindcss/utilities\";\r\n\r\nbody{\r\n  @apply dark:bg-neutral-900 bg-neutral-50 text-black dark:text-white transition-all;\r\n}\r\n\r\n@layer utilities {\r\n  .no-scrollbar::-webkit-scrollbar {\r\n      display: none;\r\n  }\r\n  .no-scrollbar {\r\n      -ms-overflow-style: none;  /* IE and Edge */\r\n      scrollbar-width: none;  /* Firefox */\r\n}\r\n}\r\n\r\n::-webkit-scrollbar {\r\n  width: 0.6rem;\r\n  height: 0.5rem;\r\n}\r\n\r\n@media (max-width: 768px) {\r\n  ::-webkit-scrollbar {\r\n  width: 0.2rem;\r\n  height: 0.5rem;\r\n}\r\n}\r\n\r\n::-webkit-scrollbar-track {\r\n  @apply bg-transparent;\r\n}\r\n\r\n.dark ::-webkit-scrollbar-track {\r\n  @apply bg-transparent;\r\n}\r\n\r\n::-webkit-scrollbar-thumb {\r\n  @apply bg-neutral-300;\r\n  border-radius: 0.5rem;\r\n}\r\n\r\n.dark ::-webkit-scrollbar-thumb {\r\n  @apply bg-neutral-600;\r\n  border-radius: 0.5rem;\r\n}\r\n\r\n::-webkit-scrollbar-thumb:hover {\r\n  @apply bg-neutral-300;\r\n}\r\n\r\n.dark ::-webkit-scrollbar-thumb:hover {\r\n  @apply bg-neutral-500;\r\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -6505,6 +6568,37 @@ const Frown = (0,_createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__["default"])("
 
 /***/ }),
 
+/***/ "./node_modules/lucide-react/dist/esm/icons/moon.js":
+/*!**********************************************************!*\
+  !*** ./node_modules/lucide-react/dist/esm/icons/moon.js ***!
+  \**********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Moon)
+/* harmony export */ });
+/* harmony import */ var _createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../createLucideIcon.js */ "./node_modules/lucide-react/dist/esm/createLucideIcon.js");
+/**
+ * @license lucide-react v0.367.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+
+
+
+const Moon = (0,_createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__["default"])("Moon", [
+  ["path", { d: "M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z", key: "a7tn18" }]
+]);
+
+
+//# sourceMappingURL=moon.js.map
+
+
+/***/ }),
+
 /***/ "./node_modules/lucide-react/dist/esm/icons/star.js":
 /*!**********************************************************!*\
   !*** ./node_modules/lucide-react/dist/esm/icons/star.js ***!
@@ -6538,6 +6632,45 @@ const Star = (0,_createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__["default"])("S
 
 
 //# sourceMappingURL=star.js.map
+
+
+/***/ }),
+
+/***/ "./node_modules/lucide-react/dist/esm/icons/sun.js":
+/*!*********************************************************!*\
+  !*** ./node_modules/lucide-react/dist/esm/icons/sun.js ***!
+  \*********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Sun)
+/* harmony export */ });
+/* harmony import */ var _createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../createLucideIcon.js */ "./node_modules/lucide-react/dist/esm/createLucideIcon.js");
+/**
+ * @license lucide-react v0.367.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+
+
+
+const Sun = (0,_createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__["default"])("Sun", [
+  ["circle", { cx: "12", cy: "12", r: "4", key: "4exip2" }],
+  ["path", { d: "M12 2v2", key: "tus03m" }],
+  ["path", { d: "M12 20v2", key: "1lh1kg" }],
+  ["path", { d: "m4.93 4.93 1.41 1.41", key: "149t6j" }],
+  ["path", { d: "m17.66 17.66 1.41 1.41", key: "ptbguv" }],
+  ["path", { d: "M2 12h2", key: "1t8f8n" }],
+  ["path", { d: "M20 12h2", key: "1q8mjw" }],
+  ["path", { d: "m6.34 17.66-1.41 1.41", key: "1m8zz5" }],
+  ["path", { d: "m19.07 4.93-1.41 1.41", key: "1shlcs" }]
+]);
+
+
+//# sourceMappingURL=sun.js.map
 
 
 /***/ }),
