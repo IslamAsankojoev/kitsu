@@ -56,16 +56,18 @@ const Search = () => {
             setValue(e.target.value)
             handleSearchChange(e.target.value)
           }}
-          className='rounded-md bg-neutral-800 px-4 py-1 focus:outline-none w-72'
+          className='rounded-md bg-neutral-200 dark:bg-neutral-800 px-4 py-1 focus:outline-none w-72'
         />
         {open && (
-          <div className="flex absolute w-96 h-[500px] overflow-scroll bg-neutral-950/95 backdrop-blur-md rounded-xl top-10 right-0 p-5 flex-col gap-2 no-scrollbar" ref={Ref}>
+          <div 
+          className="flex absolute w-96 h-[500px] overflow-scroll bg-neutral-300/95 dark:bg-neutral-950/95 backdrop-blur-md rounded-xl top-12 right-0 p-5 flex-col gap-2 no-scrollbar shadow-lg dark:shadow-none transition-all z-10"
+          ref={Ref}>
             {!!data.length ? data.map((anime) => (
-              <a href="#" key={anime.id} className='rounded-md flex gap-3 items-center bg-neutral-900/90 p-2 border border-neutral-800 hover:bg-neutral-800'>
+              <a href="#" key={anime.id} className='rounded-md flex gap-3 items-center bg-neutral-100/70 dark:bg-neutral-900/90 p-2 border border-neutral-200 dark:border-neutral-800 hover:bg-neutral-100 dark:hover:bg-neutral-800'>
                 <img src={anime.attributes.posterImage.small} alt="" className='h-16 w-auto rounded-sm'/>
                 <div className='flex-col gap-3'>
                   <p className='font-bold text-base leading-4 mb-1'>{anime.attributes.titles.en || anime.attributes.titles.en_jp || anime.attributes.titles.ja_jp}</p>
-                  <p className='line-clamp-2 text-neutral-400 text-sm leading-4'>{anime.attributes.description}</p>
+                  <p className='line-clamp-2 text-neutral-500 dark:text-neutral-400 text-sm leading-4'>{anime.attributes.description}</p>
                 </div>
               </a>
             )) : (

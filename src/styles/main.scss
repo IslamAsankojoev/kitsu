@@ -3,13 +3,7 @@
 @import "tailwindcss/utilities";
 
 body{
-  @apply dark:bg-neutral-900 bg-slate-100 text-black dark:text-white transition-all;
-}
-
-html,
-body{
-  height: 100vh;
-  background-color: rgb(31, 31, 31);
+  @apply dark:bg-neutral-900 bg-neutral-50 text-black dark:text-white transition-all;
 }
 
 @layer utilities {

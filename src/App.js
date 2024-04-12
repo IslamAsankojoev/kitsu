@@ -37,23 +37,6 @@ const BrowserRouter = createBrowserRouter([
 ]);
 
 const App = () => {
-  const [darkMode, setDarkMode] = React.useState(true)
-
-  React.useEffect(() => {
-    document.querySelector('html').classList.add('dark')
-  }, [darkMode])
-
-  React.useEffect(()=>{
-    document.addEventListener('mousemove', (e) => {
-      let body = document.querySelector('body')
-      body.style.background = `radial-gradient(circle at ${e.clientX}px ${e.clientY}px, ${colors.neutral[800]} 0%, ${colors.neutral[900]} 9%, ${colors.neutral[900]} 100%)`
-      body.style.backgroundSize = '100% 100%'
-      body.style.backgroundRepeat = 'no-repeat'
-    })
-
-  }, [])
-
-
   return (
     <div className="p-0">
       <Header />
