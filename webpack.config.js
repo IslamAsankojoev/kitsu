@@ -43,6 +43,14 @@ module.exports = {
     clean: true,
     chunkFilename: "[id].js",
   },
+  resolve: {
+    extensions: [".js", ".jsx", ".ts", ".tsx"],
+    alias: {
+      "@/app": path.resolve(__dirname, "app"),
+      "@/lib": path.resolve(__dirname, "lib"),
+      "@/components": path.resolve(__dirname, "components"),
+    },
+  },
   module: {
     rules: [
       {

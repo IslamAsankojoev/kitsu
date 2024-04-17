@@ -1,19 +1,18 @@
 import React from 'react'
 import './styles/main.scss'
-import { Card } from './components/Card/index.jsx'
-import Header from './components/Header/index.jsx';
-import Home from './components/Pages/Home.jsx';
-import About from './components/Pages/About.jsx';
-import Manga from './components/Pages/Manga.jsx';
-import AnimeScreen from './components/Pages/Anime/AnimeScreen.jsx';
-import colors from 'tailwindcss/colors'
+import Header from './components/Header';
+import Footer from './components/Footer';
+import Home from './components/Pages/Home';
+import About from './components/Pages/About';
+import Manga from './components/Pages/Manga';
+import AnimeScreen from './components/Pages/Anime/AnimeScreen';
 import { Routes, Route } from "react-router-dom";
 
 const App = () => {
   return (
-    <div className="p-0">
+    <React.Fragment>
       <Header />
-      <div className="container mx-auto my-6">
+      <div className="container mx-auto my-5">
       <Routes>
           <Route index element={<Home />} />
           <Route path="about" element={<About />} />
@@ -22,7 +21,8 @@ const App = () => {
           <Route path="anime/:id" element={<AnimeScreen />} />
       </Routes>
       </div>
-    </div>
+      <Footer />
+    </React.Fragment>
   )
 }
 

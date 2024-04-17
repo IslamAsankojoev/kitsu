@@ -1,6 +1,6 @@
 import React from "react";
 import ky from "../../config/ky.config.js";
-import { Card } from "../Card/index.jsx";
+import { AnimeCard } from "../AnimeCard";
 import { Skeleton } from "../../../components/ui/skeleton.tsx";
 
 const Home = () => {
@@ -17,8 +17,8 @@ const Home = () => {
 
   return (
     <>
-      <h3 className="font-bold text-xl my-6 ml-4">Anime</h3>
-      <div className="grid grid-cols-2 gap-5 md:grid-cols-5">
+      <h3 className="font-bold text-xl ml-4 mb-4">Anime</h3>
+      <div className="grid grid-cols-2 gap-3 md:gap-5 md:grid-cols-5">
         {loading ? (
           Array.from({ length: 10 }).map((_, index) => {
             return <Skeleton key={index} className="w-full h-96" />;
@@ -26,7 +26,7 @@ const Home = () => {
         ) : (
           <React.Fragment>
             {data?.map((anime) => {
-              return <Card key={anime.id} anime={anime} />;
+              return <AnimeCard key={anime.id}{...anime} />;
             })}
           </React.Fragment>
         )}

@@ -14,15 +14,17 @@
     "incremental": true,
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./*"]
+      "@/app/*": ["app/*"],
+      "@/lib/*": ["lib/*"],
+      "@/components/*": ["components/*"],
     }
   },
+  "typeRoots": ["./node_modules/@types", "./src" ],
   "include": [
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts",
-    "src/entities/comment/model"
-  ],
+    ".next/types/**/*.tsx"],
   "exclude": ["node_modules"]
 }

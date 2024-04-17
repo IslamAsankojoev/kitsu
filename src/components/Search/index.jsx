@@ -5,8 +5,9 @@ import debounce from "lodash.debounce";
 import { Frown } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
 import { Skeleton } from "../../../components/ui/skeleton.tsx";
+import clsx from "clsx"
 
-const Search = () => {
+const Search = ({className}) => {
   const [data, setData] = React.useState([]);
   const [search, setSearch] = React.useState("");
   const [value, setValue] = React.useState("");
@@ -55,7 +56,7 @@ const Search = () => {
   }, []);
 
   return (
-    <div className="relative" ref={parent}>
+    <div className={clsx('relative', className)} ref={parent}>
       <input
         type="text"
         placeholder="Search"
@@ -64,7 +65,7 @@ const Search = () => {
           setValue(e.target.value);
           handleSearchChange(e.target.value);
         }}
-        className="rounded-md bg-neutral-200 dark:bg-neutral-800 px-4 py-1 focus:outline-none w-72 h-[37px]"
+        className="rounded-md bg-neutral-200 dark:bg-neutral-800 px-4 py-1 focus:outline-none w-72 h-[39px]"
       />
       {open && (
         <div

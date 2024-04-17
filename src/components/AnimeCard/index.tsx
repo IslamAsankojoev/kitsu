@@ -3,11 +3,11 @@ import { Star, Film } from "lucide-react";
 import colors from "tailwindcss/colors";
 import { Link } from "react-router-dom";
 
-export const Card = ({ anime }) => {
+export const AnimeCard = (anime:IAnime) => {
   return (
     <Link
       to={`/anime/${anime.id}`}
-      className="p-4 rounded-xl bg-neutral-200 shadow-md hover:shadow-lg dark:shadow-none dark:bg-neutral-900/90 dark:hover:bg-neutral-800/80 transition-all overflow-hidden block border border-neutral-200 dark:border-neutral-700 "
+      className="p-3 md:p-4 rounded-xl bg-neutral-200 shadow-md hover:shadow-lg dark:shadow-none dark:bg-neutral-900/90 dark:hover:bg-neutral-800/80 transition-all overflow-hidden block border border-neutral-200 dark:border-neutral-700 "
     >
       <div className="relative">
         <img
@@ -33,7 +33,7 @@ export const Card = ({ anime }) => {
             anime.attributes.titles.ja_jp}
         </h4>
         <p className="line-clamp-2 text-neutral-600 dark:text-neutral-400">
-          {anime.attributes.description}
+          {anime.attributes.synopsis}
         </p>
         <div className="flex text-neutral-600 dark:text-neutral-200 items-center mt-2">
           <Film size={16} />
