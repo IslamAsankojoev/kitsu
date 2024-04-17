@@ -16,15 +16,10 @@ const plugins = [
   new MiniCssExtractPlugin({
     filename: "[name].[contenthash].css",
   }),
-  new webpack.HotModuleReplacementPlugin(),
 ];
 
 if (process.env.SERVE) {
   plugins.push(new ReactRefreshWebpackPlugin());
-}
-
-if (process.env.NODE_ENV === "development") {
-  plugins.push(new webpack.HotModuleReplacementPlugin());
 }
 
 module.exports = {
@@ -38,6 +33,7 @@ module.exports = {
     historyApiFallback: true,
     compress: true,
     open: true,
+    liveReload: false,
   },
   output: {
     filename: "main.js",
@@ -61,7 +57,18 @@ module.exports = {
       { test: /\.(html)$/, use: ["html-loader"] },
       {
         test: /\.(sc|sa|c)ss$/,
-        use: ["style-loader", "css-loader", "postcss-loader"],
+        use: [
+          "style-loader",
+          "css-loader",
+          {
+            loader: "postcss-loader",
+            options: {
+              postcssOptions: {
+                plugins: [require("tailwindcss"), require("autoprefixer")],
+              },
+            },
+          },
+        ],
       },
       {
         test: /\.(png|jpe?g|gif|svg|webp|ico)$/i,
