@@ -4387,10 +4387,160 @@ function persistAppliedTransitions(_window, transitions) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   cn: () => (/* binding */ cn)
+/* harmony export */   cn: () => (/* binding */ cn),
+/* harmony export */   transformPaginationSearchParams: () => (/* binding */ transformPaginationSearchParams)
 /* harmony export */ });
 /* harmony import */ var clsx__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! clsx */ "./node_modules/clsx/dist/clsx.mjs");
 /* harmony import */ var tailwind_merge__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tailwind-merge */ "./node_modules/tailwind-merge/dist/bundle-mjs.mjs");
+function _typeof(o) {
+  "@babel/helpers - typeof";
+
+  return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) {
+    return typeof o;
+  } : function (o) {
+    return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o;
+  }, _typeof(o);
+}
+function _toConsumableArray(arr) {
+  return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread();
+}
+function _nonIterableSpread() {
+  throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+}
+function _iterableToArray(iter) {
+  if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter);
+}
+function _arrayWithoutHoles(arr) {
+  if (Array.isArray(arr)) return _arrayLikeToArray(arr);
+}
+function _defineProperty(obj, key, value) {
+  key = _toPropertyKey(key);
+  if (key in obj) {
+    Object.defineProperty(obj, key, {
+      value: value,
+      enumerable: true,
+      configurable: true,
+      writable: true
+    });
+  } else {
+    obj[key] = value;
+  }
+  return obj;
+}
+function _toPropertyKey(t) {
+  var i = _toPrimitive(t, "string");
+  return "symbol" == _typeof(i) ? i : i + "";
+}
+function _toPrimitive(t, r) {
+  if ("object" != _typeof(t) || !t) return t;
+  var e = t[Symbol.toPrimitive];
+  if (void 0 !== e) {
+    var i = e.call(t, r || "default");
+    if ("object" != _typeof(i)) return i;
+    throw new TypeError("@@toPrimitive must return a primitive value.");
+  }
+  return ("string" === r ? String : Number)(t);
+}
+function _slicedToArray(arr, i) {
+  return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest();
+}
+function _nonIterableRest() {
+  throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+}
+function _iterableToArrayLimit(r, l) {
+  var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"];
+  if (null != t) {
+    var e,
+      n,
+      i,
+      u,
+      a = [],
+      f = !0,
+      o = !1;
+    try {
+      if (i = (t = t.call(r)).next, 0 === l) {
+        if (Object(t) !== t) return;
+        f = !1;
+      } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0);
+    } catch (r) {
+      o = !0, n = r;
+    } finally {
+      try {
+        if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return;
+      } finally {
+        if (o) throw n;
+      }
+    }
+    return a;
+  }
+}
+function _arrayWithHoles(arr) {
+  if (Array.isArray(arr)) return arr;
+}
+function _createForOfIteratorHelper(o, allowArrayLike) {
+  var it = typeof Symbol !== "undefined" && o[Symbol.iterator] || o["@@iterator"];
+  if (!it) {
+    if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") {
+      if (it) o = it;
+      var i = 0;
+      var F = function F() {};
+      return {
+        s: F,
+        n: function n() {
+          if (i >= o.length) return {
+            done: true
+          };
+          return {
+            done: false,
+            value: o[i++]
+          };
+        },
+        e: function e(_e) {
+          throw _e;
+        },
+        f: F
+      };
+    }
+    throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+  }
+  var normalCompletion = true,
+    didErr = false,
+    err;
+  return {
+    s: function s() {
+      it = it.call(o);
+    },
+    n: function n() {
+      var step = it.next();
+      normalCompletion = step.done;
+      return step;
+    },
+    e: function e(_e2) {
+      didErr = true;
+      err = _e2;
+    },
+    f: function f() {
+      try {
+        if (!normalCompletion && it["return"] != null) it["return"]();
+      } finally {
+        if (didErr) throw err;
+      }
+    }
+  };
+}
+function _unsupportedIterableToArray(o, minLen) {
+  if (!o) return;
+  if (typeof o === "string") return _arrayLikeToArray(o, minLen);
+  var n = Object.prototype.toString.call(o).slice(8, -1);
+  if (n === "Object" && o.constructor) n = o.constructor.name;
+  if (n === "Map" || n === "Set") return Array.from(o);
+  if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);
+}
+function _arrayLikeToArray(arr, len) {
+  if (len == null || len > arr.length) len = arr.length;
+  for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i];
+  return arr2;
+}
 
 
 function cn() {
@@ -4399,64 +4549,29 @@ function cn() {
   }
   return (0,tailwind_merge__WEBPACK_IMPORTED_MODULE_1__.twMerge)((0,clsx__WEBPACK_IMPORTED_MODULE_0__.clsx)(inputs));
 }
-
-/***/ }),
-
-/***/ "./src/App.js":
-/*!********************!*\
-  !*** ./src/App.js ***!
-  \********************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _styles_main_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./styles/main.scss */ "./src/styles/main.scss");
-/* harmony import */ var _components_Header_index_tsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/Header/index.tsx */ "./src/components/Header/index.tsx");
-/* harmony import */ var _components_Pages_Home_jsx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/Pages/Home.jsx */ "./src/components/Pages/Home.jsx");
-/* harmony import */ var _components_Pages_About_jsx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/Pages/About.jsx */ "./src/components/Pages/About.jsx");
-/* harmony import */ var _components_Pages_Manga_jsx__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/Pages/Manga.jsx */ "./src/components/Pages/Manga.jsx");
-/* harmony import */ var _components_Pages_Anime_AnimeScreen_jsx__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/Pages/Anime/AnimeScreen.jsx */ "./src/components/Pages/Anime/AnimeScreen.jsx");
-/* harmony import */ var tailwindcss_colors__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! tailwindcss/colors */ "./node_modules/tailwindcss/colors.js");
-/* harmony import */ var tailwindcss_colors__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(tailwindcss_colors__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/dist/index.js");
-
-
-
-
-
-
-
-
-
-var App = function App() {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Header_index_tsx__WEBPACK_IMPORTED_MODULE_2__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    className: "container mx-auto my-5"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_8__.Routes, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_8__.Route, {
-    index: true,
-    element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Pages_Home_jsx__WEBPACK_IMPORTED_MODULE_3__["default"], null)
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_8__.Route, {
-    path: "about",
-    element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Pages_About_jsx__WEBPACK_IMPORTED_MODULE_4__["default"], null)
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_8__.Route, {
-    path: "manga",
-    element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Pages_Manga_jsx__WEBPACK_IMPORTED_MODULE_5__["default"], null)
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_8__.Route, {
-    path: "anime",
-    element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Pages_Home_jsx__WEBPACK_IMPORTED_MODULE_3__["default"], null)
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_8__.Route, {
-    path: "anime/:id",
-    element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Pages_Anime_AnimeScreen_jsx__WEBPACK_IMPORTED_MODULE_6__["default"], null)
-  }))));
-};
-_c = App;
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (App);
-var _c;
-$RefreshReg$(_c, "App");
+function transformPaginationSearchParams(searchParams) {
+  var params = [];
+  var _iterator = _createForOfIteratorHelper(searchParams.entries()),
+    _step;
+  try {
+    for (_iterator.s(); !(_step = _iterator.n()).done;) {
+      var entry = _step.value;
+      params.push(entry);
+    }
+  } catch (err) {
+    _iterator.e(err);
+  } finally {
+    _iterator.f();
+  }
+  var newParams = params.map(function (_ref) {
+    var _ref2 = _slicedToArray(_ref, 2),
+      key = _ref2[0],
+      value = _ref2[1];
+    return _defineProperty({}, "page[".concat(key, "]"), value);
+  });
+  return new URLSearchParams(Object.assign.apply(Object, [{}].concat(_toConsumableArray(newParams))));
+}
+;
 
 /***/ }),
 
@@ -4509,87 +4624,6 @@ var About = function About() {
 
 /***/ }),
 
-/***/ "./src/components/Pages/Anime/AnimeScreen.jsx":
-/*!****************************************************!*\
-  !*** ./src/components/Pages/Anime/AnimeScreen.jsx ***!
-  \****************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/dist/index.js");
-/* harmony import */ var _config_ky_config_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../config/ky.config.js */ "./src/config/ky.config.js");
-/* harmony import */ var _components_ui_skeleton_tsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../components/ui/skeleton.tsx */ "./components/ui/skeleton.tsx");
-function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
-function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
-function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
-function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
-
-
-
-
-var AnimeScreen = function AnimeScreen() {
-  var _useParams = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_3__.useParams)(),
-    id = _useParams.id;
-  var _React$useState = react__WEBPACK_IMPORTED_MODULE_0___default().useState(null),
-    _React$useState2 = _slicedToArray(_React$useState, 2),
-    anime = _React$useState2[0],
-    setAnime = _React$useState2[1];
-  var _React$useState3 = react__WEBPACK_IMPORTED_MODULE_0___default().useState(false),
-    _React$useState4 = _slicedToArray(_React$useState3, 2),
-    loading = _React$useState4[0],
-    setLoading = _React$useState4[1];
-  react__WEBPACK_IMPORTED_MODULE_0___default().useEffect(function () {
-    setLoading(true);
-    _config_ky_config_js__WEBPACK_IMPORTED_MODULE_1__["default"].get("anime/".concat(id)).json().then(function (response) {
-      return setAnime(response.data);
-    })["finally"](function () {
-      return setLoading(false);
-    });
-  }, [id]);
-  if (loading) {
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-      className: "flex flex-col md:flex-row gap-5 items-center p-5 md:p-0 md:h-[80vh]"
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_ui_skeleton_tsx__WEBPACK_IMPORTED_MODULE_2__.Skeleton, {
-      className: "w-full md:w-[384px] h-[600px] rounded-xl"
-    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-      className: "flex flex-col gap-2 p-0 md:p-10 flex-grow"
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_ui_skeleton_tsx__WEBPACK_IMPORTED_MODULE_2__.Skeleton, {
-      className: "font-bold text-2xl w-full md:w-96 h-10"
-    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_ui_skeleton_tsx__WEBPACK_IMPORTED_MODULE_2__.Skeleton, {
-      className: "w-full h-52"
-    }))));
-  }
-  if (!anime) {
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", {
-      className: "text-white text-center"
-    }, "Anime not found");
-  }
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    className: "flex flex-col md:flex-row gap-5 items-center p-5 md:p-0 md:h-[80vh]"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
-    src: anime === null || anime === void 0 ? void 0 : anime.attributes.posterImage.large,
-    alt: "",
-    className: "w-full md:w-96 h-auto rounded-xl",
-    width: 384,
-    height: 500
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    className: "flex flex-col gap-2 p-0 md:p-10"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", {
-    className: "font-bold text-2xl"
-  }, (anime === null || anime === void 0 ? void 0 : anime.attributes.titles.en) || anime.attributes.titles.en_jp || anime.attributes.titles.ja_jp), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, anime === null || anime === void 0 ? void 0 : anime.attributes.description))));
-};
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (AnimeScreen);
-
-/***/ }),
-
 /***/ "./src/components/Pages/Home.jsx":
 /*!***************************************!*\
   !*** ./src/components/Pages/Home.jsx ***!
@@ -4604,8 +4638,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _config_ky_config_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../config/ky.config.js */ "./src/config/ky.config.js");
-/* harmony import */ var _Card_index_tsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Card/index.tsx */ "./src/components/Card/index.tsx");
-/* harmony import */ var _components_ui_skeleton_tsx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../components/ui/skeleton.tsx */ "./components/ui/skeleton.tsx");
+/* harmony import */ var _AnimeCard__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../AnimeCard */ "./src/components/AnimeCard/index.tsx");
+/* harmony import */ var _components_ui_skeleton_tsx__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/components/ui/skeleton.tsx */ "./components/ui/skeleton.tsx");
+/* harmony import */ var _components_Pagination__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../components/Pagination */ "./src/components/Pagination/index.tsx");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/dist/index.js");
+/* harmony import */ var _lib_utils__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @/lib/utils */ "./lib/utils.js");
+function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
@@ -4616,27 +4654,49 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
+
+
+
 var Home = function Home() {
   var _React$useState = react__WEBPACK_IMPORTED_MODULE_0___default().useState([]),
     _React$useState2 = _slicedToArray(_React$useState, 2),
     data = _React$useState2[0],
     setData = _React$useState2[1];
-  var _React$useState3 = react__WEBPACK_IMPORTED_MODULE_0___default().useState(false),
+  var _React$useState3 = react__WEBPACK_IMPORTED_MODULE_0___default().useState(0),
     _React$useState4 = _slicedToArray(_React$useState3, 2),
-    loading = _React$useState4[0],
-    setLoading = _React$useState4[1];
+    total = _React$useState4[0],
+    setTotal = _React$useState4[1];
+  var _React$useState5 = react__WEBPACK_IMPORTED_MODULE_0___default().useState(false),
+    _React$useState6 = _slicedToArray(_React$useState5, 2),
+    loading = _React$useState6[0],
+    setLoading = _React$useState6[1];
+  var _useSearchParams = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_6__.useSearchParams)(),
+    _useSearchParams2 = _slicedToArray(_useSearchParams, 2),
+    searchParams = _useSearchParams2[0],
+    setSearchParams = _useSearchParams2[1];
   react__WEBPACK_IMPORTED_MODULE_0___default().useEffect(function () {
+    var params = new URLSearchParams(searchParams);
+    if (!params.has("limit")) params.set("limit", 20);
+    if (!params.has("offset")) params.set("offset", 0);
+    setSearchParams(params);
     setLoading(true);
-    _config_ky_config_js__WEBPACK_IMPORTED_MODULE_1__["default"].get("anime").json().then(function (response) {
-      return setData(response.data);
-    })["finally"](function () {
-      return setLoading(false);
-    });
-  }, []);
+    try {
+      _config_ky_config_js__WEBPACK_IMPORTED_MODULE_1__["default"].get("anime", {
+        searchParams: (0,_lib_utils__WEBPACK_IMPORTED_MODULE_5__.transformPaginationSearchParams)(params)
+      }).json().then(function (response) {
+        setData(response.data);
+        setTotal(response.meta.count);
+      })["finally"](function () {
+        return setLoading(false);
+      });
+    } catch (error) {
+      console.error(error);
+    }
+  }, [searchParams]);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h3", {
     className: "font-bold text-xl ml-4 mb-4"
   }, "Anime"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    className: "grid grid-cols-2 gap-3 md:gap-5 md:grid-cols-5"
+    className: "grid grid-cols-2 gap-3 md:gap-5 md:grid-cols-5 my-6"
   }, loading ? Array.from({
     length: 10
   }).map(function (_, index) {
@@ -4645,11 +4705,14 @@ var Home = function Home() {
       className: "w-full h-96"
     });
   }) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, data === null || data === void 0 ? void 0 : data.map(function (anime) {
-    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Card_index_tsx__WEBPACK_IMPORTED_MODULE_2__.Card, {
-      key: anime.id,
-      anime: anime
-    });
-  }))));
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_AnimeCard__WEBPACK_IMPORTED_MODULE_2__.AnimeCard, _extends({
+      key: anime.id
+    }, anime));
+  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Pagination__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    total: total,
+    limit: Number(searchParams.get('limit')),
+    offset: Number(searchParams.get('offset'))
+  }));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Home);
 
@@ -4784,10 +4847,10 @@ var Search = function Search(_ref) {
     },
     className: "rounded-md bg-neutral-200 dark:bg-neutral-800 px-4 py-1 focus:outline-none w-72 h-[39px]"
   }), open && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    className: "flex absolute w-96 h-[500px] overflow-scroll bg-neutral-300/95 dark:bg-neutral-950/95 rounded-xl top-12 right-0 p-5 flex-col gap-2 no-scrollbar shadow-lg dark:shadow-none transition-all z-10",
+    className: "flex absolute w-96 h-[500px] overflow-scroll bg-neutral-300/95 dark:bg-neutral-950/90 rounded-xl top-12 right-0 p-5 flex-col gap-2 no-scrollbar transition-all z-10",
     ref: Ref
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-    className: "relative flex flex-col gap-2 backdrop-blur-md"
+    className: "relative flex flex-col gap-2"
   }, loading && Array.from({
     length: 10
   }).map(function (_, index) {
@@ -5540,6 +5603,9 @@ video {
 .mt-4 {
   margin-top: 1rem;
 }
+.mt-8 {
+  margin-top: 2rem;
+}
 .line-clamp-2 {
   overflow: hidden;
   display: -webkit-box;
@@ -5630,6 +5696,9 @@ video {
 .h-24 {
   height: 6rem;
 }
+.h-4 {
+  height: 1rem;
+}
 .h-52 {
   height: 13rem;
 }
@@ -5641,6 +5710,9 @@ video {
 }
 .h-96 {
   height: 24rem;
+}
+.h-\\[1px\\] {
+  height: 1px;
 }
 .h-\\[39px\\] {
   height: 39px;
@@ -5660,14 +5732,33 @@ video {
 .w-10 {
   width: 2.5rem;
 }
+.w-3\\/4 {
+  width: 75%;
+}
+.w-4 {
+  width: 1rem;
+}
+.w-5\\/6 {
+  width: 83.333333%;
+}
 .w-72 {
   width: 18rem;
+}
+.w-9 {
+  width: 2.25rem;
 }
 .w-96 {
   width: 24rem;
 }
+.w-\\[1px\\] {
+  width: 1px;
+}
 .w-auto {
   width: auto;
+}
+.w-fit {
+  width: -moz-fit-content;
+  width: fit-content;
 }
 .w-full {
   width: 100%;
@@ -5677,6 +5768,9 @@ video {
 }
 .shrink {
   flex-shrink: 1;
+}
+.shrink-0 {
+  flex-shrink: 0;
 }
 .flex-grow {
   flex-grow: 1;
@@ -5734,6 +5828,12 @@ video {
 .justify-between {
   justify-content: space-between;
 }
+.justify-stretch {
+  justify-content: stretch;
+}
+.gap-1 {
+  gap: 0.25rem;
+}
 .gap-10 {
   gap: 2.5rem;
 }
@@ -5742,6 +5842,9 @@ video {
 }
 .gap-3 {
   gap: 0.75rem;
+}
+.gap-4 {
+  gap: 1rem;
 }
 .gap-5 {
   gap: 1.25rem;
@@ -5810,6 +5913,13 @@ video {
 }
 .rounded {
   border-radius: 0.25rem;
+}
+.rounded-full {
+  border-radius: 9999px;
+}
+.rounded-lg {
+  border-radius: 0.75rem;
+  border-radius: var(--radius);
 }
 .rounded-md {
   border-radius: calc(0.75rem - 2px);
@@ -5899,6 +6009,11 @@ video {
 .border-t {
   border-top-width: 1px;
 }
+.border-green-500 {
+  --tw-border-opacity: 1;
+  border-color: rgba(34, 197, 94, 1);
+  border-color: rgba(34, 197, 94, var(--tw-border-opacity));
+}
 .border-input {
   border-color: hsl(0, 0%, 90%);
   border-color: hsl(var(--input));
@@ -5907,6 +6022,11 @@ video {
   --tw-border-opacity: 1;
   border-color: rgba(229, 229, 229, 1);
   border-color: rgba(229, 229, 229, var(--tw-border-opacity));
+}
+.border-neutral-500 {
+  --tw-border-opacity: 1;
+  border-color: rgba(115, 115, 115, 1);
+  border-color: rgba(115, 115, 115, var(--tw-border-opacity));
 }
 .border-neutral-700 {
   --tw-border-opacity: 1;
@@ -5918,13 +6038,35 @@ video {
   border-color: rgba(38, 38, 38, 1);
   border-color: rgba(38, 38, 38, var(--tw-border-opacity));
 }
+.border-orange-500 {
+  --tw-border-opacity: 1;
+  border-color: rgba(249, 115, 22, 1);
+  border-color: rgba(249, 115, 22, var(--tw-border-opacity));
+}
+.border-rose-500 {
+  --tw-border-opacity: 1;
+  border-color: rgba(244, 63, 94, 1);
+  border-color: rgba(244, 63, 94, var(--tw-border-opacity));
+}
+.border-transparent {
+  border-color: transparent;
+}
 .bg-background {
   background-color: hsl(0, 0%, 100%);
   background-color: hsl(var(--background));
 }
+.bg-border {
+  background-color: hsl(0, 0%, 90%);
+  background-color: hsl(var(--border));
+}
 .bg-destructive {
   background-color: hsl(0, 84%, 60%);
   background-color: hsl(var(--destructive));
+}
+.bg-green-900 {
+  --tw-bg-opacity: 1;
+  background-color: rgba(20, 83, 45, 1);
+  background-color: rgba(20, 83, 45, var(--tw-bg-opacity));
 }
 .bg-muted {
   background-color: hsl(0, 0%, 96%);
@@ -5951,6 +6093,11 @@ video {
 .bg-neutral-300\\/95 {
   background-color: rgba(212, 212, 212, 0.95);
 }
+.bg-neutral-400 {
+  --tw-bg-opacity: 1;
+  background-color: rgba(163, 163, 163, 1);
+  background-color: rgba(163, 163, 163, var(--tw-bg-opacity));
+}
 .bg-neutral-50 {
   --tw-bg-opacity: 1;
   background-color: rgba(250, 250, 250, 1);
@@ -5971,9 +6118,19 @@ video {
   background-color: rgba(10, 10, 10, 1);
   background-color: rgba(10, 10, 10, var(--tw-bg-opacity));
 }
+.bg-orange-900 {
+  --tw-bg-opacity: 1;
+  background-color: rgba(124, 45, 18, 1);
+  background-color: rgba(124, 45, 18, var(--tw-bg-opacity));
+}
 .bg-primary {
   background-color: hsl(0, 0%, 9%);
   background-color: hsl(var(--primary));
+}
+.bg-rose-900 {
+  --tw-bg-opacity: 1;
+  background-color: rgba(136, 19, 55, 1);
+  background-color: rgba(136, 19, 55, var(--tw-bg-opacity));
 }
 .bg-secondary {
   background-color: hsl(0, 0%, 96%);
@@ -6008,6 +6165,14 @@ video {
 .p-5 {
   padding: 1.25rem;
 }
+.px-2 {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+.px-2\\.5 {
+  padding-left: 0.625rem;
+  padding-right: 0.625rem;
+}
 .px-3 {
   padding-left: 0.75rem;
   padding-right: 0.75rem;
@@ -6020,6 +6185,14 @@ video {
   padding-left: 2rem;
   padding-right: 2rem;
 }
+.py-0 {
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+.py-0\\.5 {
+  padding-top: 0.125rem;
+  padding-bottom: 0.125rem;
+}
 .py-1 {
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
@@ -6031,6 +6204,22 @@ video {
 .py-4 {
   padding-top: 1rem;
   padding-bottom: 1rem;
+}
+.py-6 {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+.pl-2 {
+  padding-left: 0.5rem;
+}
+.pl-2\\.5 {
+  padding-left: 0.625rem;
+}
+.pr-2 {
+  padding-right: 0.5rem;
+}
+.pr-2\\.5 {
+  padding-right: 0.625rem;
 }
 .text-center {
   text-align: center;
@@ -6051,6 +6240,10 @@ video {
   font-size: 1.25rem;
   line-height: 1.75rem;
 }
+.text-xs {
+  font-size: 0.75rem;
+  line-height: 1rem;
+}
 .font-bold {
   font-weight: 700;
 }
@@ -6062,6 +6255,9 @@ video {
 }
 .font-normal {
   font-weight: 400;
+}
+.font-semibold {
+  font-weight: 600;
 }
 .uppercase {
   text-transform: uppercase;
@@ -6149,6 +6345,19 @@ video {
   color: hsl(0, 0%, 98%);
   color: hsl(var(--destructive-foreground));
 }
+.text-foreground {
+  color: hsl(0, 0%, 4%);
+  color: hsl(var(--foreground));
+}
+.text-green-300 {
+  --tw-text-opacity: 1;
+  color: rgba(134, 239, 172, 1);
+  color: rgba(134, 239, 172, var(--tw-text-opacity));
+}
+.text-muted-foreground {
+  color: hsl(0, 0%, 45%);
+  color: hsl(var(--muted-foreground));
+}
 .text-neutral-100 {
   --tw-text-opacity: 1;
   color: rgba(245, 245, 245, 1);
@@ -6158,6 +6367,11 @@ video {
   --tw-text-opacity: 1;
   color: rgba(229, 229, 229, 1);
   color: rgba(229, 229, 229, var(--tw-text-opacity));
+}
+.text-neutral-300 {
+  --tw-text-opacity: 1;
+  color: rgba(212, 212, 212, 1);
+  color: rgba(212, 212, 212, var(--tw-text-opacity));
 }
 .text-neutral-400 {
   --tw-text-opacity: 1;
@@ -6179,6 +6393,11 @@ video {
   color: rgba(64, 64, 64, 1);
   color: rgba(64, 64, 64, var(--tw-text-opacity));
 }
+.text-orange-300 {
+  --tw-text-opacity: 1;
+  color: rgba(253, 186, 116, 1);
+  color: rgba(253, 186, 116, var(--tw-text-opacity));
+}
 .text-primary {
   color: hsl(0, 0%, 9%);
   color: hsl(var(--primary));
@@ -6186,6 +6405,11 @@ video {
 .text-primary-foreground {
   color: hsl(0, 0%, 98%);
   color: hsl(var(--primary-foreground));
+}
+.text-rose-300 {
+  --tw-text-opacity: 1;
+  color: rgba(253, 164, 175, 1);
+  color: rgba(253, 164, 175, var(--tw-text-opacity));
 }
 .text-secondary-foreground {
   color: hsl(0, 0%, 9%);
@@ -6472,9 +6696,20 @@ video {
   background-color: hsl(var(--accent));
 }
 
+.hover\\:bg-destructive\\/80:hover {
+  background-color: hsla(0, 84%, 60%, 0.8);
+  background-color: hsl(var(--destructive) / 0.8);
+}
+
 .hover\\:bg-destructive\\/90:hover {
   background-color: hsla(0, 84%, 60%, 0.9);
   background-color: hsl(var(--destructive) / 0.9);
+}
+
+.hover\\:bg-green-800:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgba(22, 101, 52, 1);
+  background-color: rgba(22, 101, 52, var(--tw-bg-opacity));
 }
 
 .hover\\:bg-neutral-100:hover {
@@ -6489,9 +6724,32 @@ video {
   background-color: rgba(212, 212, 212, var(--tw-bg-opacity));
 }
 
+.hover\\:bg-neutral-800:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgba(38, 38, 38, 1);
+  background-color: rgba(38, 38, 38, var(--tw-bg-opacity));
+}
+
+.hover\\:bg-orange-800:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgba(154, 52, 18, 1);
+  background-color: rgba(154, 52, 18, var(--tw-bg-opacity));
+}
+
+.hover\\:bg-primary\\/80:hover {
+  background-color: hsla(0, 0%, 9%, 0.8);
+  background-color: hsl(var(--primary) / 0.8);
+}
+
 .hover\\:bg-primary\\/90:hover {
   background-color: hsla(0, 0%, 9%, 0.9);
   background-color: hsl(var(--primary) / 0.9);
+}
+
+.hover\\:bg-rose-800:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgba(159, 18, 57, 1);
+  background-color: rgba(159, 18, 57, var(--tw-bg-opacity));
 }
 
 .hover\\:bg-secondary\\/80:hover {
@@ -6504,10 +6762,34 @@ video {
   color: hsl(var(--accent-foreground));
 }
 
+.hover\\:text-green-300:hover {
+  --tw-text-opacity: 1;
+  color: rgba(134, 239, 172, 1);
+  color: rgba(134, 239, 172, var(--tw-text-opacity));
+}
+
+.hover\\:text-neutral-300:hover {
+  --tw-text-opacity: 1;
+  color: rgba(212, 212, 212, 1);
+  color: rgba(212, 212, 212, var(--tw-text-opacity));
+}
+
 .hover\\:text-neutral-900:hover {
   --tw-text-opacity: 1;
   color: rgba(23, 23, 23, 1);
   color: rgba(23, 23, 23, var(--tw-text-opacity));
+}
+
+.hover\\:text-orange-300:hover {
+  --tw-text-opacity: 1;
+  color: rgba(253, 186, 116, 1);
+  color: rgba(253, 186, 116, var(--tw-text-opacity));
+}
+
+.hover\\:text-rose-300:hover {
+  --tw-text-opacity: 1;
+  color: rgba(253, 164, 175, 1);
+  color: rgba(253, 164, 175, var(--tw-text-opacity));
 }
 
 .hover\\:underline:hover {
@@ -6524,6 +6806,21 @@ video {
 .focus\\:outline-none:focus {
   outline: 2px solid transparent;
   outline-offset: 2px;
+}
+
+.focus\\:ring-2:focus {
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  box-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color), var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color), 0 0 rgba(0,0,0,0);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 rgba(0,0,0,0));
+}
+
+.focus\\:ring-ring:focus {
+  --tw-ring-color: hsl(var(--ring));
+}
+
+.focus\\:ring-offset-2:focus {
+  --tw-ring-offset-width: 2px;
 }
 
 .focus-visible\\:outline-none:focus-visible {
@@ -6574,6 +6871,10 @@ video {
 
 .dark .dark\\:bg-neutral-900\\/90 {
   background-color: rgba(23, 23, 23, 0.9);
+}
+
+.dark .dark\\:bg-neutral-950\\/90 {
+  background-color: rgba(10, 10, 10, 0.9);
 }
 
 .dark .dark\\:bg-neutral-950\\/95 {
@@ -6672,7 +6973,7 @@ video {
     padding: 1rem;
   }
 }
-`, "",{"version":3,"sources":["webpack://./src/styles/main.scss"],"names":[],"mappings":"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","sourcesContent":["@import \"tailwindcss/base\";\r\n@import \"tailwindcss/components\";\r\n@import \"tailwindcss/utilities\";\r\n\r\n@layer utilities {\r\n  .no-scrollbar::-webkit-scrollbar {\r\n      display: none;\r\n  }\r\n  .no-scrollbar {\r\n      -ms-overflow-style: none;  /* IE and Edge */\r\n      scrollbar-width: none;  /* Firefox */\r\n}\r\n}\r\n\r\n@layer base {\r\n  :root {\r\n    --background: 0 0% 100%;\r\n    --foreground: 0 0% 3.9%;\r\n    --card: 0 0% 100%;\r\n    --card-foreground: 0 0% 3.9%;\r\n    --popover: 0 0% 100%;\r\n    --popover-foreground: 0 0% 3.9%;\r\n    --primary: 0 0% 9%;\r\n    --primary-foreground: 0 0% 98%;\r\n    --secondary: 0 0% 96.1%;\r\n    --secondary-foreground: 0 0% 9%;\r\n    --muted: 0 0% 96.1%;\r\n    --muted-foreground: 0 0% 45.1%;\r\n    --accent: 0 0% 96.1%;\r\n    --accent-foreground: 0 0% 9%;\r\n    --destructive: 0 84.2% 60.2%;\r\n    --destructive-foreground: 0 0% 98%;\r\n    --border: 0 0% 89.8%;\r\n    --input: 0 0% 89.8%;\r\n    --ring: 0 0% 3.9%;\r\n    --radius: 0.75rem;\r\n  }\r\n\r\n  .dark {\r\n    --background: 0 0% 3.9%;\r\n    --foreground: 0 0% 98%;\r\n    --card: 0 0% 3.9%;\r\n    --card-foreground: 0 0% 98%;\r\n    --popover: 0 0% 3.9%;\r\n    --popover-foreground: 0 0% 98%;\r\n    --primary: 0 0% 98%;\r\n    --primary-foreground: 0 0% 9%;\r\n    --secondary: 0 0% 14.9%;\r\n    --secondary-foreground: 0 0% 98%;\r\n    --muted: 0 0% 14.9%;\r\n    --muted-foreground: 0 0% 63.9%;\r\n    --accent: 0 0% 14.9%;\r\n    --accent-foreground: 0 0% 98%;\r\n    --destructive: 0 62.8% 30.6%;\r\n    --destructive-foreground: 0 0% 98%;\r\n    --border: 0 0% 14.9%;\r\n    --input: 0 0% 14.9%;\r\n    --ring: 0 0% 83.1%;\r\n  }\r\n}\r\n\r\n\r\n@layer base {\r\n  * {\r\n    @apply border-border;\r\n  }\r\n  body {\r\n    @apply bg-background text-foreground;\r\n    font-feature-settings: \"rlig\" 1, \"calt\" 1;\r\n  }\r\n}\r\n\r\n::-webkit-scrollbar {\r\n  width: 0.6rem;\r\n  height: 0.5rem;\r\n}\r\n\r\n@media (max-width: 768px) {\r\n  ::-webkit-scrollbar {\r\n  width: 0.2rem;\r\n  height: 0.5rem;\r\n}\r\n}\r\n\r\n::-webkit-scrollbar-track {\r\n  @apply bg-transparent;\r\n}\r\n\r\n.dark ::-webkit-scrollbar-track {\r\n  @apply bg-transparent;\r\n}\r\n\r\n::-webkit-scrollbar-thumb {\r\n  @apply bg-neutral-300;\r\n  border-radius: 0.5rem;\r\n}\r\n\r\n.dark ::-webkit-scrollbar-thumb {\r\n  @apply bg-neutral-600;\r\n  border-radius: 0.5rem;\r\n}\r\n\r\n::-webkit-scrollbar-thumb:hover {\r\n  @apply bg-neutral-300;\r\n}\r\n\r\n.dark ::-webkit-scrollbar-thumb:hover {\r\n  @apply bg-neutral-500;\r\n}\r\n"],"sourceRoot":""}]);
+`, "",{"version":3,"sources":["webpack://./src/styles/main.scss"],"names":[],"mappings":"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","sourcesContent":["@import \"tailwindcss/base\";\r\n@import \"tailwindcss/components\";\r\n@import \"tailwindcss/utilities\";\r\n\r\n@layer utilities {\r\n  .no-scrollbar::-webkit-scrollbar {\r\n      display: none;\r\n  }\r\n  .no-scrollbar {\r\n      -ms-overflow-style: none;  /* IE and Edge */\r\n      scrollbar-width: none;  /* Firefox */\r\n}\r\n}\r\n\r\n@layer base {\r\n  :root {\r\n    --background: 0 0% 100%;\r\n    --foreground: 0 0% 3.9%;\r\n    --card: 0 0% 100%;\r\n    --card-foreground: 0 0% 3.9%;\r\n    --popover: 0 0% 100%;\r\n    --popover-foreground: 0 0% 3.9%;\r\n    --primary: 0 0% 9%;\r\n    --primary-foreground: 0 0% 98%;\r\n    --secondary: 0 0% 96.1%;\r\n    --secondary-foreground: 0 0% 9%;\r\n    --muted: 0 0% 96.1%;\r\n    --muted-foreground: 0 0% 45.1%;\r\n    --accent: 0 0% 96.1%;\r\n    --accent-foreground: 0 0% 9%;\r\n    --destructive: 0 84.2% 60.2%;\r\n    --destructive-foreground: 0 0% 98%;\r\n    --border: 0 0% 89.8%;\r\n    --input: 0 0% 89.8%;\r\n    --ring: 0 0% 3.9%;\r\n    --radius: 0.75rem;\r\n  }\r\n\r\n  .dark {\r\n    --background: 0 0% 3.9%;\r\n    --foreground: 0 0% 98%;\r\n    --card: 0 0% 3.9%;\r\n    --card-foreground: 0 0% 98%;\r\n    --popover: 0 0% 3.9%;\r\n    --popover-foreground: 0 0% 98%;\r\n    --primary: 0 0% 98%;\r\n    --primary-foreground: 0 0% 9%;\r\n    --secondary: 0 0% 14.9%;\r\n    --secondary-foreground: 0 0% 98%;\r\n    --muted: 0 0% 14.9%;\r\n    --muted-foreground: 0 0% 63.9%;\r\n    --accent: 0 0% 14.9%;\r\n    --accent-foreground: 0 0% 98%;\r\n    --destructive: 0 62.8% 30.6%;\r\n    --destructive-foreground: 0 0% 98%;\r\n    --border: 0 0% 14.9%;\r\n    --input: 0 0% 14.9%;\r\n    --ring: 0 0% 83.1%;\r\n  }\r\n}\r\n\r\n\r\n@layer base {\r\n  * {\r\n    @apply border-border;\r\n  }\r\n  body {\r\n    @apply bg-background text-foreground;\r\n    font-feature-settings: \"rlig\" 1, \"calt\" 1;\r\n  }\r\n}\r\n\r\n::-webkit-scrollbar {\r\n  width: 0.6rem;\r\n  height: 0.5rem;\r\n}\r\n\r\n@media (max-width: 768px) {\r\n  ::-webkit-scrollbar {\r\n  width: 0.2rem;\r\n  height: 0.5rem;\r\n}\r\n}\r\n\r\n::-webkit-scrollbar-track {\r\n  @apply bg-transparent;\r\n}\r\n\r\n.dark ::-webkit-scrollbar-track {\r\n  @apply bg-transparent;\r\n}\r\n\r\n::-webkit-scrollbar-thumb {\r\n  @apply bg-neutral-300;\r\n  border-radius: 0.5rem;\r\n}\r\n\r\n.dark ::-webkit-scrollbar-thumb {\r\n  @apply bg-neutral-600;\r\n  border-radius: 0.5rem;\r\n}\r\n\r\n::-webkit-scrollbar-thumb:hover {\r\n  @apply bg-neutral-300;\r\n}\r\n\r\n.dark ::-webkit-scrollbar-thumb:hover {\r\n  @apply bg-neutral-500;\r\n}\r\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -7285,6 +7586,101 @@ var defaultAttributes = {
 
 
 //# sourceMappingURL=defaultAttributes.js.map
+
+
+/***/ }),
+
+/***/ "./node_modules/lucide-react/dist/esm/icons/chevron-left.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/lucide-react/dist/esm/icons/chevron-left.js ***!
+  \******************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ ChevronLeft)
+/* harmony export */ });
+/* harmony import */ var _createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../createLucideIcon.js */ "./node_modules/lucide-react/dist/esm/createLucideIcon.js");
+/**
+ * @license lucide-react v0.367.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+
+
+
+const ChevronLeft = (0,_createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__["default"])("ChevronLeft", [
+  ["path", { d: "m15 18-6-6 6-6", key: "1wnfg3" }]
+]);
+
+
+//# sourceMappingURL=chevron-left.js.map
+
+
+/***/ }),
+
+/***/ "./node_modules/lucide-react/dist/esm/icons/chevron-right.js":
+/*!*******************************************************************!*\
+  !*** ./node_modules/lucide-react/dist/esm/icons/chevron-right.js ***!
+  \*******************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ ChevronRight)
+/* harmony export */ });
+/* harmony import */ var _createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../createLucideIcon.js */ "./node_modules/lucide-react/dist/esm/createLucideIcon.js");
+/**
+ * @license lucide-react v0.367.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+
+
+
+const ChevronRight = (0,_createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__["default"])("ChevronRight", [
+  ["path", { d: "m9 18 6-6-6-6", key: "mthhwq" }]
+]);
+
+
+//# sourceMappingURL=chevron-right.js.map
+
+
+/***/ }),
+
+/***/ "./node_modules/lucide-react/dist/esm/icons/ellipsis.js":
+/*!**************************************************************!*\
+  !*** ./node_modules/lucide-react/dist/esm/icons/ellipsis.js ***!
+  \**************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Ellipsis)
+/* harmony export */ });
+/* harmony import */ var _createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../createLucideIcon.js */ "./node_modules/lucide-react/dist/esm/createLucideIcon.js");
+/**
+ * @license lucide-react v0.367.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */
+
+
+
+const Ellipsis = (0,_createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__["default"])("Ellipsis", [
+  ["circle", { cx: "12", cy: "12", r: "1", key: "41hilf" }],
+  ["circle", { cx: "19", cy: "12", r: "1", key: "1wjl8i" }],
+  ["circle", { cx: "5", cy: "12", r: "1", key: "1pcz8c" }]
+]);
+
+
+//# sourceMappingURL=ellipsis.js.map
 
 
 /***/ }),
@@ -44724,6 +45120,294 @@ const _default = {
 
 /***/ }),
 
+/***/ "./components/ui/badge.tsx":
+/*!*********************************!*\
+  !*** ./components/ui/badge.tsx ***!
+  \*********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   Badge: () => (/* binding */ Badge),
+/* harmony export */   badgeVariants: () => (/* binding */ badgeVariants)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var class_variance_authority__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! class-variance-authority */ "./node_modules/class-variance-authority/dist/index.mjs");
+/* harmony import */ var _lib_utils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/lib/utils */ "./lib/utils.js");
+var __assign = (undefined && undefined.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+var __rest = (undefined && undefined.__rest) || function (s, e) {
+    var t = {};
+    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+        t[p] = s[p];
+    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+                t[p[i]] = s[p[i]];
+        }
+    return t;
+};
+
+
+
+var badgeVariants = (0,class_variance_authority__WEBPACK_IMPORTED_MODULE_1__.cva)("inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2", {
+    variants: {
+        variant: {
+            default: "border-transparent bg-primary text-primary-foreground hover:bg-primary/80",
+            secondary: "border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80",
+            destructive: "border-transparent bg-destructive text-destructive-foreground hover:bg-destructive/80",
+            outline: "text-foreground",
+        },
+    },
+    defaultVariants: {
+        variant: "default",
+    },
+});
+function Badge(_a) {
+    var className = _a.className, variant = _a.variant, props = __rest(_a, ["className", "variant"]);
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", __assign({ className: (0,_lib_utils__WEBPACK_IMPORTED_MODULE_2__.cn)(badgeVariants({ variant: variant }), className) }, props)));
+}
+
+
+
+/***/ }),
+
+/***/ "./components/ui/button.tsx":
+/*!**********************************!*\
+  !*** ./components/ui/button.tsx ***!
+  \**********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   Button: () => (/* binding */ Button),
+/* harmony export */   buttonVariants: () => (/* binding */ buttonVariants)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _radix_ui_react_slot__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @radix-ui/react-slot */ "./node_modules/@radix-ui/react-slot/dist/index.mjs");
+/* harmony import */ var class_variance_authority__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! class-variance-authority */ "./node_modules/class-variance-authority/dist/index.mjs");
+/* harmony import */ var _lib_utils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/lib/utils */ "./lib/utils.js");
+var __assign = (undefined && undefined.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+var __rest = (undefined && undefined.__rest) || function (s, e) {
+    var t = {};
+    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+        t[p] = s[p];
+    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+                t[p[i]] = s[p[i]];
+        }
+    return t;
+};
+
+
+
+
+var buttonVariants = (0,class_variance_authority__WEBPACK_IMPORTED_MODULE_1__.cva)("inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50", {
+    variants: {
+        variant: {
+            default: "bg-primary text-primary-foreground hover:bg-primary/90",
+            destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90",
+            outline: "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
+            secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
+            ghost: "hover:bg-accent hover:text-accent-foreground",
+            link: "text-primary underline-offset-4 hover:underline",
+        },
+        size: {
+            default: "h-10 px-4 py-2",
+            sm: "h-9 rounded-md px-3",
+            lg: "h-11 rounded-md px-8",
+            icon: "h-10 w-10",
+        },
+    },
+    defaultVariants: {
+        variant: "default",
+        size: "default",
+    },
+});
+var Button = react__WEBPACK_IMPORTED_MODULE_0__.forwardRef(function (_a, ref) {
+    var className = _a.className, variant = _a.variant, size = _a.size, _b = _a.asChild, asChild = _b === void 0 ? false : _b, props = __rest(_a, ["className", "variant", "size", "asChild"]);
+    var Comp = asChild ? _radix_ui_react_slot__WEBPACK_IMPORTED_MODULE_3__.Slot : "button";
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(Comp, __assign({ className: (0,_lib_utils__WEBPACK_IMPORTED_MODULE_2__.cn)(buttonVariants({ variant: variant, size: size, className: className })), ref: ref }, props)));
+});
+Button.displayName = "Button";
+
+
+
+/***/ }),
+
+/***/ "./components/ui/pagination.tsx":
+/*!**************************************!*\
+  !*** ./components/ui/pagination.tsx ***!
+  \**************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   Pagination: () => (/* binding */ Pagination),
+/* harmony export */   PaginationContent: () => (/* binding */ PaginationContent),
+/* harmony export */   PaginationEllipsis: () => (/* binding */ PaginationEllipsis),
+/* harmony export */   PaginationItem: () => (/* binding */ PaginationItem),
+/* harmony export */   PaginationLink: () => (/* binding */ PaginationLink),
+/* harmony export */   PaginationNext: () => (/* binding */ PaginationNext),
+/* harmony export */   PaginationPrevious: () => (/* binding */ PaginationPrevious)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/chevron-left.js");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/chevron-right.js");
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/ellipsis.js");
+/* harmony import */ var _lib_utils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/lib/utils */ "./lib/utils.js");
+/* harmony import */ var _components_ui_button__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/components/ui/button */ "./components/ui/button.tsx");
+var __assign = (undefined && undefined.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+var __rest = (undefined && undefined.__rest) || function (s, e) {
+    var t = {};
+    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+        t[p] = s[p];
+    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+                t[p[i]] = s[p[i]];
+        }
+    return t;
+};
+
+
+
+
+var Pagination = function (_a) {
+    var className = _a.className, props = __rest(_a, ["className"]);
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("nav", __assign({ role: "navigation", "aria-label": "pagination", className: (0,_lib_utils__WEBPACK_IMPORTED_MODULE_1__.cn)("mx-auto flex w-full justify-center", className) }, props)));
+};
+Pagination.displayName = "Pagination";
+var PaginationContent = react__WEBPACK_IMPORTED_MODULE_0__.forwardRef(function (_a, ref) {
+    var className = _a.className, props = __rest(_a, ["className"]);
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("ul", __assign({ ref: ref, className: (0,_lib_utils__WEBPACK_IMPORTED_MODULE_1__.cn)("flex flex-row items-center gap-1", className) }, props)));
+});
+PaginationContent.displayName = "PaginationContent";
+var PaginationItem = react__WEBPACK_IMPORTED_MODULE_0__.forwardRef(function (_a, ref) {
+    var className = _a.className, props = __rest(_a, ["className"]);
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", __assign({ ref: ref, className: (0,_lib_utils__WEBPACK_IMPORTED_MODULE_1__.cn)("", className) }, props)));
+});
+PaginationItem.displayName = "PaginationItem";
+var PaginationLink = function (_a) {
+    var className = _a.className, isActive = _a.isActive, _b = _a.size, size = _b === void 0 ? "icon" : _b, props = __rest(_a, ["className", "isActive", "size"]);
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("a", __assign({ "aria-current": isActive ? "page" : undefined, className: (0,_lib_utils__WEBPACK_IMPORTED_MODULE_1__.cn)((0,_components_ui_button__WEBPACK_IMPORTED_MODULE_2__.buttonVariants)({
+            variant: isActive ? "default" : "secondary",
+            size: size,
+        }), "cursor-pointer", className) }, props)));
+};
+PaginationLink.displayName = "PaginationLink";
+var PaginationPrevious = function (_a) {
+    var className = _a.className, props = __rest(_a, ["className"]);
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(PaginationLink, __assign({ "aria-label": "Go to previous page", size: "default", className: (0,_lib_utils__WEBPACK_IMPORTED_MODULE_1__.cn)("gap-1 pl-2.5", className) }, props),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(lucide_react__WEBPACK_IMPORTED_MODULE_3__["default"], { className: "h-4 w-4" }),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, "Previous")));
+};
+PaginationPrevious.displayName = "PaginationPrevious";
+var PaginationNext = function (_a) {
+    var className = _a.className, props = __rest(_a, ["className"]);
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(PaginationLink, __assign({ "aria-label": "Go to next page", size: "default", className: (0,_lib_utils__WEBPACK_IMPORTED_MODULE_1__.cn)("gap-1 pr-2.5", className) }, props),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", null, "Next"),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(lucide_react__WEBPACK_IMPORTED_MODULE_4__["default"], { className: "h-4 w-4" })));
+};
+PaginationNext.displayName = "PaginationNext";
+var PaginationEllipsis = function (_a) {
+    var className = _a.className, props = __rest(_a, ["className"]);
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", __assign({ "aria-hidden": true, className: (0,_lib_utils__WEBPACK_IMPORTED_MODULE_1__.cn)("flex h-9 w-9 items-center justify-center", className) }, props),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement(lucide_react__WEBPACK_IMPORTED_MODULE_5__["default"], { className: "h-4 w-4" }),
+        react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", { className: "sr-only" }, "More pages")));
+};
+PaginationEllipsis.displayName = "PaginationEllipsis";
+
+
+
+/***/ }),
+
+/***/ "./components/ui/separator.tsx":
+/*!*************************************!*\
+  !*** ./components/ui/separator.tsx ***!
+  \*************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   Separator: () => (/* binding */ Separator)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _radix_ui_react_separator__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @radix-ui/react-separator */ "./node_modules/@radix-ui/react-separator/dist/index.mjs");
+/* harmony import */ var _lib_utils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/lib/utils */ "./lib/utils.js");
+var __assign = (undefined && undefined.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+var __rest = (undefined && undefined.__rest) || function (s, e) {
+    var t = {};
+    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+        t[p] = s[p];
+    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+                t[p[i]] = s[p[i]];
+        }
+    return t;
+};
+
+
+
+var Separator = react__WEBPACK_IMPORTED_MODULE_0__.forwardRef(function (_a, ref) {
+    var className = _a.className, _b = _a.orientation, orientation = _b === void 0 ? "horizontal" : _b, _c = _a.decorative, decorative = _c === void 0 ? true : _c, props = __rest(_a, ["className", "orientation", "decorative"]);
+    return (react__WEBPACK_IMPORTED_MODULE_0__.createElement(_radix_ui_react_separator__WEBPACK_IMPORTED_MODULE_2__.Root, __assign({ ref: ref, decorative: decorative, orientation: orientation, className: (0,_lib_utils__WEBPACK_IMPORTED_MODULE_1__.cn)("shrink-0 bg-border", orientation === "horizontal" ? "h-[1px] w-full" : "h-full w-[1px]", className) }, props)));
+});
+Separator.displayName = _radix_ui_react_separator__WEBPACK_IMPORTED_MODULE_2__.Root.displayName;
+
+
+
+/***/ }),
+
 /***/ "./components/ui/skeleton.tsx":
 /*!************************************!*\
   !*** ./components/ui/skeleton.tsx ***!
@@ -44771,16 +45455,63 @@ function Skeleton(_a) {
 
 /***/ }),
 
-/***/ "./src/components/Card/index.tsx":
-/*!***************************************!*\
-  !*** ./src/components/Card/index.tsx ***!
-  \***************************************/
+/***/ "./src/App.tsx":
+/*!*********************!*\
+  !*** ./src/App.tsx ***!
+  \*********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   Card: () => (/* binding */ Card)
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _styles_main_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./styles/main.scss */ "./src/styles/main.scss");
+/* harmony import */ var _components_Header__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/Header */ "./src/components/Header/index.tsx");
+/* harmony import */ var _components_Footer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/Footer */ "./src/components/Footer/index.tsx");
+/* harmony import */ var _components_Pages_Home__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/Pages/Home */ "./src/components/Pages/Home.jsx");
+/* harmony import */ var _components_Pages_About__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/Pages/About */ "./src/components/Pages/About.jsx");
+/* harmony import */ var _components_Pages_Manga__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/Pages/Manga */ "./src/components/Pages/Manga.jsx");
+/* harmony import */ var _components_Pages_Anime_AnimeScreen__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/Pages/Anime/AnimeScreen */ "./src/components/Pages/Anime/AnimeScreen.tsx");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/dist/index.js");
+
+
+
+
+
+
+
+
+
+var App = function () {
+    return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null,
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Header__WEBPACK_IMPORTED_MODULE_2__["default"], null),
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: "container mx-auto my-5" },
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_8__.Routes, null,
+                react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_8__.Route, { index: true, element: react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Pages_Home__WEBPACK_IMPORTED_MODULE_4__["default"], null) }),
+                react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_8__.Route, { path: "about", element: react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Pages_About__WEBPACK_IMPORTED_MODULE_5__["default"], null) }),
+                react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_8__.Route, { path: "manga", element: react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Pages_Manga__WEBPACK_IMPORTED_MODULE_6__["default"], null) }),
+                react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_8__.Route, { path: "anime", element: react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Pages_Home__WEBPACK_IMPORTED_MODULE_4__["default"], null) }),
+                react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_8__.Route, { path: "anime/:id", element: react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Pages_Anime_AnimeScreen__WEBPACK_IMPORTED_MODULE_7__["default"], null) }))),
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_Footer__WEBPACK_IMPORTED_MODULE_3__["default"], null)));
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (App);
+
+
+/***/ }),
+
+/***/ "./src/components/AnimeCard/index.tsx":
+/*!********************************************!*\
+  !*** ./src/components/AnimeCard/index.tsx ***!
+  \********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   AnimeCard: () => (/* binding */ AnimeCard)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
@@ -44793,26 +45524,50 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var Card = function (_a) {
-    var anime = _a.anime;
+var AnimeCard = function (anime) {
+    var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
     return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Link, { to: "/anime/".concat(anime.id), className: "p-3 md:p-4 rounded-xl bg-neutral-200 shadow-md hover:shadow-lg dark:shadow-none dark:bg-neutral-900/90 dark:hover:bg-neutral-800/80 transition-all overflow-hidden block border border-neutral-200 dark:border-neutral-700 " },
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: "relative" },
-            react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", { src: anime.attributes.posterImage.large, alt: "", className: "w-full h-72 object-cover object-top rounded-md" }),
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", { src: (_b = (_a = anime === null || anime === void 0 ? void 0 : anime.attributes) === null || _a === void 0 ? void 0 : _a.posterImage) === null || _b === void 0 ? void 0 : _b.large, alt: "", className: "w-full h-72 object-cover object-top rounded-md" }),
             react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: "flex items-center p-2 absolute top-0 left-0" },
                 react__WEBPACK_IMPORTED_MODULE_0___default().createElement(lucide_react__WEBPACK_IMPORTED_MODULE_3__["default"], { className: "text-yellow-300", size: 16, fill: (tailwindcss_colors__WEBPACK_IMPORTED_MODULE_1___default().yellow)[300] }),
-                react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", { className: "text-neutral-100 text-sm font-bold ml-1" }, anime.attributes.averageRating))),
+                react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", { className: "text-neutral-100 text-sm font-bold ml-1" }, (_c = anime === null || anime === void 0 ? void 0 : anime.attributes) === null || _c === void 0 ? void 0 : _c.averageRating))),
         react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: "mt-3" },
-            react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h4", { className: "font-bold" }, anime.attributes.titles.en ||
-                anime.attributes.titles.en_jp ||
-                anime.attributes.titles.ja_jp),
-            react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", { className: "line-clamp-2 text-neutral-600 dark:text-neutral-400" }, anime.attributes.description),
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h4", { className: "font-bold" }, ((_e = (_d = anime === null || anime === void 0 ? void 0 : anime.attributes) === null || _d === void 0 ? void 0 : _d.titles) === null || _e === void 0 ? void 0 : _e.en) ||
+                ((_g = (_f = anime === null || anime === void 0 ? void 0 : anime.attributes) === null || _f === void 0 ? void 0 : _f.titles) === null || _g === void 0 ? void 0 : _g.en_jp) ||
+                ((_j = (_h = anime === null || anime === void 0 ? void 0 : anime.attributes) === null || _h === void 0 ? void 0 : _h.titles) === null || _j === void 0 ? void 0 : _j.ja_jp)),
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", { className: "line-clamp-2 text-neutral-600 dark:text-neutral-400" }, (_k = anime === null || anime === void 0 ? void 0 : anime.attributes) === null || _k === void 0 ? void 0 : _k.synopsis),
             react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: "flex text-neutral-600 dark:text-neutral-200 items-center mt-2" },
                 react__WEBPACK_IMPORTED_MODULE_0___default().createElement(lucide_react__WEBPACK_IMPORTED_MODULE_4__["default"], { size: 16 }),
-                react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", { className: "text-sm ml-1" },
-                    anime.attributes.episodeCount,
+                react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", { className: "text-sm ml-1" }, (_l = anime === null || anime === void 0 ? void 0 : anime.attributes) === null || _l === void 0 ? void 0 :
+                    _l.episodeCount,
                     " - episodes",
                     " ")))));
 };
+
+
+/***/ }),
+
+/***/ "./src/components/Footer/index.tsx":
+/*!*****************************************!*\
+  !*** ./src/components/Footer/index.tsx ***!
+  \*****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+var Footer = function () {
+    return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null,
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: "py-6 mt-8 text-muted-foreground text-center bg-neutral-900" },
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: "container" }, "\u00A9 2021 Kitsu - All Rights Reserved"))));
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Footer);
 
 
 /***/ }),
@@ -44834,7 +45589,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/sun.js");
 /* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! lucide-react */ "./node_modules/lucide-react/dist/esm/icons/moon.js");
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/dist/index.js");
-Object(function webpackMissingModule() { var e = new Error("Cannot find module '../../../components/ui/button.js'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
+/* harmony import */ var _components_ui_button__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/components/ui/button */ "./components/ui/button.tsx");
 
 
 
@@ -44879,13 +45634,264 @@ var Header = function () {
                     react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", { className: "font-extrabold text-xl tracking-widest" }, "KITSU")),
                 react__WEBPACK_IMPORTED_MODULE_0___default().createElement("nav", { className: "md:flex space-x-4 hidden" }, menuItems.map(function (item) { return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", { key: item.url, href: item.url, className: "text-neutral-700 dark:text-neutral-200 hover:text-neutral-900 dark:hover:text-neutral-100" }, item.name)); }))),
             react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: 'flex gap-2' },
-                react__WEBPACK_IMPORTED_MODULE_0___default().createElement(Object(function webpackMissingModule() { var e = new Error("Cannot find module '../../../components/ui/button.js'"); e.code = 'MODULE_NOT_FOUND'; throw e; }()), { onClick: function () {
+                react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_ui_button__WEBPACK_IMPORTED_MODULE_2__.Button, { onClick: function () {
                         setTheme(theme === 'dark' ? 'light' : 'dark');
                     }, variant: 'ghost', size: 'icon', className: 'flex items-center bg-neutral-200 dark:bg-neutral-800 p-2 rounded-md hover:bg-neutral-300 dark:hover:bg-neutral-700 transition-all' }, theme === 'dark' ? react__WEBPACK_IMPORTED_MODULE_0___default().createElement(lucide_react__WEBPACK_IMPORTED_MODULE_4__["default"], { size: 20, strokeWidth: 1.25 }) : react__WEBPACK_IMPORTED_MODULE_0___default().createElement(lucide_react__WEBPACK_IMPORTED_MODULE_5__["default"], { size: 20, strokeWidth: 1.25 })),
                 react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Search_index_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], { className: 'hidden md:block' })))));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Header);
 
+
+/***/ }),
+
+/***/ "./src/components/Pages/Anime/AnimeScreen.tsx":
+/*!****************************************************!*\
+  !*** ./src/components/Pages/Anime/AnimeScreen.tsx ***!
+  \****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/dist/index.js");
+/* harmony import */ var _config_ky_config_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../config/ky.config.js */ "./src/config/ky.config.js");
+/* harmony import */ var _components_ui_skeleton__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/components/ui/skeleton */ "./components/ui/skeleton.tsx");
+/* harmony import */ var _Badges__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Badges */ "./src/components/Pages/Anime/Badges.tsx");
+var __assign = (undefined && undefined.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+
+
+
+
+
+var AnimeScreen = function () {
+    var id = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_4__.useParams)().id;
+    var _a = react__WEBPACK_IMPORTED_MODULE_0___default().useState(null), anime = _a[0], setAnime = _a[1];
+    var _b = react__WEBPACK_IMPORTED_MODULE_0___default().useState(false), loading = _b[0], setLoading = _b[1];
+    react__WEBPACK_IMPORTED_MODULE_0___default().useEffect(function () {
+        setLoading(true);
+        _config_ky_config_js__WEBPACK_IMPORTED_MODULE_1__["default"].get("anime/".concat(id))
+            .json()
+            .then(function (response) { return setAnime(response.data); })
+            .finally(function () { return setLoading(false); });
+    }, [id]);
+    if (loading) {
+        return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null,
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: "flex flex-col md:flex-row gap-5 items-center p-5 md:p-0 md:h-[80vh]" },
+                react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_ui_skeleton__WEBPACK_IMPORTED_MODULE_2__.Skeleton, { className: "w-full md:w-[384px] h-[600px] rounded-xl" }),
+                react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: "flex flex-col gap-2 p-0 md:p-10 flex-grow" },
+                    react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_ui_skeleton__WEBPACK_IMPORTED_MODULE_2__.Skeleton, { className: "font-bold text-2xl w-full md:w-96 h-10" }),
+                    react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_ui_skeleton__WEBPACK_IMPORTED_MODULE_2__.Skeleton, { className: "w-full h-4" }),
+                    react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_ui_skeleton__WEBPACK_IMPORTED_MODULE_2__.Skeleton, { className: "w-full h-4" }),
+                    react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_ui_skeleton__WEBPACK_IMPORTED_MODULE_2__.Skeleton, { className: "w-full h-4" }),
+                    react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_ui_skeleton__WEBPACK_IMPORTED_MODULE_2__.Skeleton, { className: "w-full h-4" }),
+                    react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_ui_skeleton__WEBPACK_IMPORTED_MODULE_2__.Skeleton, { className: "w-5/6 h-4" }),
+                    react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_ui_skeleton__WEBPACK_IMPORTED_MODULE_2__.Skeleton, { className: "w-3/4 h-4" })))));
+    }
+    if (!anime) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", { className: "text-white text-center" }, "Anime not found");
+    }
+    return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null,
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: "flex flex-col md:flex-row gap-5 items-center p-5 md:p-0 md:h-[80vh]" },
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", { src: anime === null || anime === void 0 ? void 0 : anime.attributes.posterImage.large, alt: "", className: "w-full md:w-96 h-auto rounded-xl", width: 384, height: 500 }),
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: "flex flex-col gap-4 p-0 md:p-10" },
+                react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", { className: "font-bold text-2xl" },
+                    (anime === null || anime === void 0 ? void 0 : anime.attributes.titles.en) || anime.attributes.titles.en_jp || anime.attributes.titles.ja_jp,
+                    react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", { className: 'text-base text-muted-foreground' },
+                        "\u00A0\u00A0(", anime === null || anime === void 0 ? void 0 :
+                        anime.attributes.ageRatingGuide,
+                        ")")),
+                react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, anime === null || anime === void 0 ? void 0 : anime.attributes.synopsis),
+                react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Badges__WEBPACK_IMPORTED_MODULE_3__["default"], __assign({}, anime))))));
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (AnimeScreen);
+
+
+/***/ }),
+
+/***/ "./src/components/Pages/Anime/Badges.tsx":
+/*!***********************************************!*\
+  !*** ./src/components/Pages/Anime/Badges.tsx ***!
+  \***********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _components_ui_badge__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/components/ui/badge */ "./components/ui/badge.tsx");
+/* harmony import */ var _components_ui_separator__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/components/ui/separator */ "./components/ui/separator.tsx");
+
+
+
+var Badges = function (anime) {
+    var _a, _b, _c, _d, _e;
+    return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", { className: "flex gap-2 items-center flex-wrap justify-stretch" },
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", null,
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_ui_badge__WEBPACK_IMPORTED_MODULE_1__.Badge, { variant: "outline", className: "px-2 rounded-lg border-green-500 bg-green-900 text-green-300 w-fit hover:text-green-300 hover:bg-green-800" }, ((_a = anime === null || anime === void 0 ? void 0 : anime.attributes) === null || _a === void 0 ? void 0 : _a.showType) || 'TV'),
+            ' ',
+            "Show"),
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_ui_separator__WEBPACK_IMPORTED_MODULE_2__.Separator, { orientation: "vertical", className: "bg-neutral-400 h-4" }),
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", null,
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_ui_badge__WEBPACK_IMPORTED_MODULE_1__.Badge, { variant: "outline", className: "px-2 rounded-lg border-orange-500 bg-orange-900 text-orange-300 w-fit hover:text-orange-300 hover:bg-orange-800" }, ((_b = anime === null || anime === void 0 ? void 0 : anime.attributes) === null || _b === void 0 ? void 0 : _b.ratingRank) || '0'),
+            ' ',
+            "Rating Rank"),
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_ui_separator__WEBPACK_IMPORTED_MODULE_2__.Separator, { orientation: "vertical", className: "bg-neutral-400 h-4" }),
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", null,
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_ui_badge__WEBPACK_IMPORTED_MODULE_1__.Badge, { variant: "outline", className: "px-2 rounded-lg border-rose-500 bg-rose-900 text-rose-300 w-fit hover:text-rose-300 hover:bg-rose-800" }, ((_c = anime === null || anime === void 0 ? void 0 : anime.attributes) === null || _c === void 0 ? void 0 : _c.userCount) || '0'),
+            ' ',
+            "Watchers"),
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_ui_separator__WEBPACK_IMPORTED_MODULE_2__.Separator, { orientation: "vertical", className: "bg-neutral-400 h-4" }),
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", null,
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_ui_badge__WEBPACK_IMPORTED_MODULE_1__.Badge, { variant: "outline", className: "px-2 rounded-lg border-neutral-500 bg-neutral-900 text-neutral-300 w-fit hover:text-neutral-300 hover:bg-neutral-800" }, ((_d = anime === null || anime === void 0 ? void 0 : anime.attributes) === null || _d === void 0 ? void 0 : _d.episodeCount) || '0'),
+            ' ',
+            "Episodes (",
+            ((_e = anime === null || anime === void 0 ? void 0 : anime.attributes) === null || _e === void 0 ? void 0 : _e.episodeLength) || '0',
+            " min)")));
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Badges);
+
+
+/***/ }),
+
+/***/ "./src/components/Pagination/index.tsx":
+/*!*********************************************!*\
+  !*** ./src/components/Pagination/index.tsx ***!
+  \*********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _components_ui_pagination__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/components/ui/pagination */ "./components/ui/pagination.tsx");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/dist/index.js");
+//@ts-nocheck
+
+
+
+var PaginationComp = function (_a) {
+    var total = _a.total, offset = _a.offset, limit = _a.limit;
+    var _b = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_2__.useSearchParams)(), searchParams = _b[0], setSearchParams = _b[1];
+    var _c = react__WEBPACK_IMPORTED_MODULE_0___default().useState([]), renderPages = _c[0], setRenderPages = _c[1];
+    var totalPages = Math.ceil(total / limit);
+    var currentPage = Math.floor(offset / limit) + 1;
+    var handlePageClick = function (page) {
+        var newOffset = (page - 1) * limit;
+        var newParams = new URLSearchParams(searchParams);
+        newParams.set('offset', newOffset.toString());
+        setSearchParams(newParams);
+    };
+    var handleNextClick = function () {
+        var newOffset = offset + limit;
+        var newParams = new URLSearchParams(searchParams);
+        newParams.set('offset', newOffset.toString());
+        setSearchParams(newParams);
+    };
+    var handlePrevClick = function () {
+        var newOffset = offset - limit;
+        var newParams = new URLSearchParams(searchParams);
+        newParams.set('offset', newOffset.toString());
+        setSearchParams(newParams);
+    };
+    var pages = [];
+    for (var page = 1; page <= totalPages / limit; page++) {
+        pages.push(page);
+    }
+    (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+        var pageNumbers = [];
+        if (currentPage <= 4) {
+            pageNumbers = [];
+            for (var page = 1; page <= 5; page++) {
+                pageNumbers.push(page);
+            }
+            pageNumbers.push('...');
+            pageNumbers.push(totalPages);
+        }
+        if (currentPage >= 5 && currentPage <= totalPages - 4) {
+            pageNumbers = [];
+            pageNumbers.push(1);
+            pageNumbers.push('...');
+            for (var page = currentPage - 2; page <= currentPage + 2; page++) {
+                pageNumbers.push(page);
+            }
+            pageNumbers.push('...');
+            pageNumbers.push(totalPages);
+        }
+        if (currentPage >= totalPages - 3) {
+            pageNumbers = [];
+            pageNumbers.push(1);
+            pageNumbers.push('...');
+            for (var page = totalPages - 4; page <= totalPages; page++) {
+                pageNumbers.push(page);
+            }
+        }
+        setRenderPages(pageNumbers);
+    }, [currentPage, totalPages]);
+    return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null,
+        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_ui_pagination__WEBPACK_IMPORTED_MODULE_1__.Pagination, null,
+            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_ui_pagination__WEBPACK_IMPORTED_MODULE_1__.PaginationContent, null,
+                offset > 0 && (react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_ui_pagination__WEBPACK_IMPORTED_MODULE_1__.PaginationItem, null,
+                    react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_ui_pagination__WEBPACK_IMPORTED_MODULE_1__.PaginationPrevious, { onClick: handlePrevClick }))),
+                renderPages.map(function (page, index) {
+                    if (page === '...')
+                        return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_ui_pagination__WEBPACK_IMPORTED_MODULE_1__.PaginationItem, { key: index },
+                            react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_ui_pagination__WEBPACK_IMPORTED_MODULE_1__.PaginationEllipsis, null)));
+                    return (react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_ui_pagination__WEBPACK_IMPORTED_MODULE_1__.PaginationItem, { key: index },
+                        react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_ui_pagination__WEBPACK_IMPORTED_MODULE_1__.PaginationLink, { onClick: function () { return handlePageClick(page); }, isActive: currentPage === page }, page)));
+                }),
+                offset + limit < totalPages && (react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_ui_pagination__WEBPACK_IMPORTED_MODULE_1__.PaginationItem, null,
+                    react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_ui_pagination__WEBPACK_IMPORTED_MODULE_1__.PaginationNext, { onClick: handleNextClick })))))));
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (PaginationComp);
+
+
+/***/ }),
+
+/***/ "./node_modules/@babel/runtime/helpers/esm/extends.js":
+/*!************************************************************!*\
+  !*** ./node_modules/@babel/runtime/helpers/esm/extends.js ***!
+  \************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ _extends)
+/* harmony export */ });
+function _extends() {
+  _extends = Object.assign ? Object.assign.bind() : function (target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
+    }
+    return target;
+  };
+  return _extends.apply(this, arguments);
+}
 
 /***/ }),
 
@@ -45660,6 +46666,437 @@ function useAutoAnimate(options) {
 
 
 
+
+/***/ }),
+
+/***/ "./node_modules/@radix-ui/react-compose-refs/dist/index.mjs":
+/*!******************************************************************!*\
+  !*** ./node_modules/@radix-ui/react-compose-refs/dist/index.mjs ***!
+  \******************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   composeRefs: () => (/* binding */ $6ed0406888f73fc4$export$43e446d32b3d21af),
+/* harmony export */   useComposedRefs: () => (/* binding */ $6ed0406888f73fc4$export$c7b2cbe3552a0d05)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+
+
+/**
+ * Set a given ref to a given value
+ * This utility takes care of different types of refs: callback refs and RefObject(s)
+ */ function $6ed0406888f73fc4$var$setRef(ref, value) {
+    if (typeof ref === 'function') ref(value);
+    else if (ref !== null && ref !== undefined) ref.current = value;
+}
+/**
+ * A utility to compose multiple refs together
+ * Accepts callback refs and RefObject(s)
+ */ function $6ed0406888f73fc4$export$43e446d32b3d21af(...refs) {
+    return (node)=>refs.forEach((ref)=>$6ed0406888f73fc4$var$setRef(ref, node)
+        )
+    ;
+}
+/**
+ * A custom hook that composes multiple refs
+ * Accepts callback refs and RefObject(s)
+ */ function $6ed0406888f73fc4$export$c7b2cbe3552a0d05(...refs) {
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    return (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)($6ed0406888f73fc4$export$43e446d32b3d21af(...refs), refs);
+}
+
+
+
+
+
+//# sourceMappingURL=index.mjs.map
+
+
+/***/ }),
+
+/***/ "./node_modules/@radix-ui/react-primitive/dist/index.mjs":
+/*!***************************************************************!*\
+  !*** ./node_modules/@radix-ui/react-primitive/dist/index.mjs ***!
+  \***************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   Primitive: () => (/* binding */ $8927f6f2acc4f386$export$250ffa63cdc0d034),
+/* harmony export */   Root: () => (/* binding */ $8927f6f2acc4f386$export$be92b6f5f03c0fe9),
+/* harmony export */   dispatchDiscreteCustomEvent: () => (/* binding */ $8927f6f2acc4f386$export$6d1a0317bde7de7f)
+/* harmony export */ });
+/* harmony import */ var _babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/extends */ "./node_modules/@babel/runtime/helpers/esm/extends.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
+/* harmony import */ var _radix_ui_react_slot__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @radix-ui/react-slot */ "./node_modules/@radix-ui/react-slot/dist/index.mjs");
+
+
+
+
+
+
+
+
+
+const $8927f6f2acc4f386$var$NODES = [
+    'a',
+    'button',
+    'div',
+    'form',
+    'h2',
+    'h3',
+    'img',
+    'input',
+    'label',
+    'li',
+    'nav',
+    'ol',
+    'p',
+    'span',
+    'svg',
+    'ul'
+]; // Temporary while we await merge of this fix:
+// https://github.com/DefinitelyTyped/DefinitelyTyped/pull/55396
+// prettier-ignore
+/* -------------------------------------------------------------------------------------------------
+ * Primitive
+ * -----------------------------------------------------------------------------------------------*/ const $8927f6f2acc4f386$export$250ffa63cdc0d034 = $8927f6f2acc4f386$var$NODES.reduce((primitive, node)=>{
+    const Node = /*#__PURE__*/ (0,react__WEBPACK_IMPORTED_MODULE_1__.forwardRef)((props, forwardedRef)=>{
+        const { asChild: asChild , ...primitiveProps } = props;
+        const Comp = asChild ? _radix_ui_react_slot__WEBPACK_IMPORTED_MODULE_3__.Slot : node;
+        (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(()=>{
+            window[Symbol.for('radix-ui')] = true;
+        }, []);
+        return /*#__PURE__*/ (0,react__WEBPACK_IMPORTED_MODULE_1__.createElement)(Comp, (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, primitiveProps, {
+            ref: forwardedRef
+        }));
+    });
+    Node.displayName = `Primitive.${node}`;
+    return {
+        ...primitive,
+        [node]: Node
+    };
+}, {});
+/* -------------------------------------------------------------------------------------------------
+ * Utils
+ * -----------------------------------------------------------------------------------------------*/ /**
+ * Flush custom event dispatch
+ * https://github.com/radix-ui/primitives/pull/1378
+ *
+ * React batches *all* event handlers since version 18, this introduces certain considerations when using custom event types.
+ *
+ * Internally, React prioritises events in the following order:
+ *  - discrete
+ *  - continuous
+ *  - default
+ *
+ * https://github.com/facebook/react/blob/a8a4742f1c54493df00da648a3f9d26e3db9c8b5/packages/react-dom/src/events/ReactDOMEventListener.js#L294-L350
+ *
+ * `discrete` is an  important distinction as updates within these events are applied immediately.
+ * React however, is not able to infer the priority of custom event types due to how they are detected internally.
+ * Because of this, it's possible for updates from custom events to be unexpectedly batched when
+ * dispatched by another `discrete` event.
+ *
+ * In order to ensure that updates from custom events are applied predictably, we need to manually flush the batch.
+ * This utility should be used when dispatching a custom event from within another `discrete` event, this utility
+ * is not nessesary when dispatching known event types, or if dispatching a custom type inside a non-discrete event.
+ * For example:
+ *
+ * dispatching a known click 👎
+ * target.dispatchEvent(new Event(‘click’))
+ *
+ * dispatching a custom type within a non-discrete event 👎
+ * onScroll={(event) => event.target.dispatchEvent(new CustomEvent(‘customType’))}
+ *
+ * dispatching a custom type within a `discrete` event 👍
+ * onPointerDown={(event) => dispatchDiscreteCustomEvent(event.target, new CustomEvent(‘customType’))}
+ *
+ * Note: though React classifies `focus`, `focusin` and `focusout` events as `discrete`, it's  not recommended to use
+ * this utility with them. This is because it's possible for those handlers to be called implicitly during render
+ * e.g. when focus is within a component as it is unmounted, or when managing focus on mount.
+ */ function $8927f6f2acc4f386$export$6d1a0317bde7de7f(target, event) {
+    if (target) (0,react_dom__WEBPACK_IMPORTED_MODULE_2__.flushSync)(()=>target.dispatchEvent(event)
+    );
+}
+/* -----------------------------------------------------------------------------------------------*/ const $8927f6f2acc4f386$export$be92b6f5f03c0fe9 = $8927f6f2acc4f386$export$250ffa63cdc0d034;
+
+
+
+
+
+//# sourceMappingURL=index.mjs.map
+
+
+/***/ }),
+
+/***/ "./node_modules/@radix-ui/react-separator/dist/index.mjs":
+/*!***************************************************************!*\
+  !*** ./node_modules/@radix-ui/react-separator/dist/index.mjs ***!
+  \***************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   Root: () => (/* binding */ $89eedd556c436f6a$export$be92b6f5f03c0fe9),
+/* harmony export */   Separator: () => (/* binding */ $89eedd556c436f6a$export$1ff3c3f08ae963c0)
+/* harmony export */ });
+/* harmony import */ var _babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/extends */ "./node_modules/@babel/runtime/helpers/esm/extends.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _radix_ui_react_primitive__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @radix-ui/react-primitive */ "./node_modules/@radix-ui/react-primitive/dist/index.mjs");
+
+
+
+
+
+
+
+/* -------------------------------------------------------------------------------------------------
+ *  Separator
+ * -----------------------------------------------------------------------------------------------*/ const $89eedd556c436f6a$var$NAME = 'Separator';
+const $89eedd556c436f6a$var$DEFAULT_ORIENTATION = 'horizontal';
+const $89eedd556c436f6a$var$ORIENTATIONS = [
+    'horizontal',
+    'vertical'
+];
+const $89eedd556c436f6a$export$1ff3c3f08ae963c0 = /*#__PURE__*/ (0,react__WEBPACK_IMPORTED_MODULE_1__.forwardRef)((props, forwardedRef)=>{
+    const { decorative: decorative , orientation: orientationProp = $89eedd556c436f6a$var$DEFAULT_ORIENTATION , ...domProps } = props;
+    const orientation = $89eedd556c436f6a$var$isValidOrientation(orientationProp) ? orientationProp : $89eedd556c436f6a$var$DEFAULT_ORIENTATION; // `aria-orientation` defaults to `horizontal` so we only need it if `orientation` is vertical
+    const ariaOrientation = orientation === 'vertical' ? orientation : undefined;
+    const semanticProps = decorative ? {
+        role: 'none'
+    } : {
+        'aria-orientation': ariaOrientation,
+        role: 'separator'
+    };
+    return /*#__PURE__*/ (0,react__WEBPACK_IMPORTED_MODULE_1__.createElement)(_radix_ui_react_primitive__WEBPACK_IMPORTED_MODULE_2__.Primitive.div, (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({
+        "data-orientation": orientation
+    }, semanticProps, domProps, {
+        ref: forwardedRef
+    }));
+});
+/*#__PURE__*/ Object.assign($89eedd556c436f6a$export$1ff3c3f08ae963c0, {
+    displayName: $89eedd556c436f6a$var$NAME
+});
+$89eedd556c436f6a$export$1ff3c3f08ae963c0.propTypes = {
+    orientation (props, propName, componentName) {
+        const propValue = props[propName];
+        const strVal = String(propValue);
+        if (propValue && !$89eedd556c436f6a$var$isValidOrientation(propValue)) return new Error($89eedd556c436f6a$var$getInvalidOrientationError(strVal, componentName));
+        return null;
+    }
+};
+/* -----------------------------------------------------------------------------------------------*/ // Split this out for clearer readability of the error message.
+function $89eedd556c436f6a$var$getInvalidOrientationError(value, componentName) {
+    return `Invalid prop \`orientation\` of value \`${value}\` supplied to \`${componentName}\`, expected one of:
+  - horizontal
+  - vertical
+
+Defaulting to \`${$89eedd556c436f6a$var$DEFAULT_ORIENTATION}\`.`;
+}
+function $89eedd556c436f6a$var$isValidOrientation(orientation) {
+    return $89eedd556c436f6a$var$ORIENTATIONS.includes(orientation);
+}
+const $89eedd556c436f6a$export$be92b6f5f03c0fe9 = $89eedd556c436f6a$export$1ff3c3f08ae963c0;
+
+
+
+
+
+//# sourceMappingURL=index.mjs.map
+
+
+/***/ }),
+
+/***/ "./node_modules/@radix-ui/react-slot/dist/index.mjs":
+/*!**********************************************************!*\
+  !*** ./node_modules/@radix-ui/react-slot/dist/index.mjs ***!
+  \**********************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   Root: () => (/* binding */ $5e63c961fc1ce211$export$be92b6f5f03c0fe9),
+/* harmony export */   Slot: () => (/* binding */ $5e63c961fc1ce211$export$8c6ed5c666ac1360),
+/* harmony export */   Slottable: () => (/* binding */ $5e63c961fc1ce211$export$d9f1ccf0bdb05d45)
+/* harmony export */ });
+/* harmony import */ var _babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/esm/extends */ "./node_modules/@babel/runtime/helpers/esm/extends.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _radix_ui_react_compose_refs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @radix-ui/react-compose-refs */ "./node_modules/@radix-ui/react-compose-refs/dist/index.mjs");
+
+
+
+
+
+
+
+/* -------------------------------------------------------------------------------------------------
+ * Slot
+ * -----------------------------------------------------------------------------------------------*/ const $5e63c961fc1ce211$export$8c6ed5c666ac1360 = /*#__PURE__*/ (0,react__WEBPACK_IMPORTED_MODULE_1__.forwardRef)((props, forwardedRef)=>{
+    const { children: children , ...slotProps } = props;
+    const childrenArray = react__WEBPACK_IMPORTED_MODULE_1__.Children.toArray(children);
+    const slottable = childrenArray.find($5e63c961fc1ce211$var$isSlottable);
+    if (slottable) {
+        // the new element to render is the one passed as a child of `Slottable`
+        const newElement = slottable.props.children;
+        const newChildren = childrenArray.map((child)=>{
+            if (child === slottable) {
+                // because the new element will be the one rendered, we are only interested
+                // in grabbing its children (`newElement.props.children`)
+                if (react__WEBPACK_IMPORTED_MODULE_1__.Children.count(newElement) > 1) return react__WEBPACK_IMPORTED_MODULE_1__.Children.only(null);
+                return /*#__PURE__*/ (0,react__WEBPACK_IMPORTED_MODULE_1__.isValidElement)(newElement) ? newElement.props.children : null;
+            } else return child;
+        });
+        return /*#__PURE__*/ (0,react__WEBPACK_IMPORTED_MODULE_1__.createElement)($5e63c961fc1ce211$var$SlotClone, (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, slotProps, {
+            ref: forwardedRef
+        }), /*#__PURE__*/ (0,react__WEBPACK_IMPORTED_MODULE_1__.isValidElement)(newElement) ? /*#__PURE__*/ (0,react__WEBPACK_IMPORTED_MODULE_1__.cloneElement)(newElement, undefined, newChildren) : null);
+    }
+    return /*#__PURE__*/ (0,react__WEBPACK_IMPORTED_MODULE_1__.createElement)($5e63c961fc1ce211$var$SlotClone, (0,_babel_runtime_helpers_esm_extends__WEBPACK_IMPORTED_MODULE_0__["default"])({}, slotProps, {
+        ref: forwardedRef
+    }), children);
+});
+$5e63c961fc1ce211$export$8c6ed5c666ac1360.displayName = 'Slot';
+/* -------------------------------------------------------------------------------------------------
+ * SlotClone
+ * -----------------------------------------------------------------------------------------------*/ const $5e63c961fc1ce211$var$SlotClone = /*#__PURE__*/ (0,react__WEBPACK_IMPORTED_MODULE_1__.forwardRef)((props, forwardedRef)=>{
+    const { children: children , ...slotProps } = props;
+    if (/*#__PURE__*/ (0,react__WEBPACK_IMPORTED_MODULE_1__.isValidElement)(children)) return /*#__PURE__*/ (0,react__WEBPACK_IMPORTED_MODULE_1__.cloneElement)(children, {
+        ...$5e63c961fc1ce211$var$mergeProps(slotProps, children.props),
+        ref: forwardedRef ? (0,_radix_ui_react_compose_refs__WEBPACK_IMPORTED_MODULE_2__.composeRefs)(forwardedRef, children.ref) : children.ref
+    });
+    return react__WEBPACK_IMPORTED_MODULE_1__.Children.count(children) > 1 ? react__WEBPACK_IMPORTED_MODULE_1__.Children.only(null) : null;
+});
+$5e63c961fc1ce211$var$SlotClone.displayName = 'SlotClone';
+/* -------------------------------------------------------------------------------------------------
+ * Slottable
+ * -----------------------------------------------------------------------------------------------*/ const $5e63c961fc1ce211$export$d9f1ccf0bdb05d45 = ({ children: children  })=>{
+    return /*#__PURE__*/ (0,react__WEBPACK_IMPORTED_MODULE_1__.createElement)(react__WEBPACK_IMPORTED_MODULE_1__.Fragment, null, children);
+};
+/* ---------------------------------------------------------------------------------------------- */ function $5e63c961fc1ce211$var$isSlottable(child) {
+    return /*#__PURE__*/ (0,react__WEBPACK_IMPORTED_MODULE_1__.isValidElement)(child) && child.type === $5e63c961fc1ce211$export$d9f1ccf0bdb05d45;
+}
+function $5e63c961fc1ce211$var$mergeProps(slotProps, childProps) {
+    // all child props should override
+    const overrideProps = {
+        ...childProps
+    };
+    for(const propName in childProps){
+        const slotPropValue = slotProps[propName];
+        const childPropValue = childProps[propName];
+        const isHandler = /^on[A-Z]/.test(propName);
+        if (isHandler) {
+            // if the handler exists on both, we compose them
+            if (slotPropValue && childPropValue) overrideProps[propName] = (...args)=>{
+                childPropValue(...args);
+                slotPropValue(...args);
+            };
+            else if (slotPropValue) overrideProps[propName] = slotPropValue;
+        } else if (propName === 'style') overrideProps[propName] = {
+            ...slotPropValue,
+            ...childPropValue
+        };
+        else if (propName === 'className') overrideProps[propName] = [
+            slotPropValue,
+            childPropValue
+        ].filter(Boolean).join(' ');
+    }
+    return {
+        ...slotProps,
+        ...overrideProps
+    };
+}
+const $5e63c961fc1ce211$export$be92b6f5f03c0fe9 = $5e63c961fc1ce211$export$8c6ed5c666ac1360;
+
+
+
+
+
+//# sourceMappingURL=index.mjs.map
+
+
+/***/ }),
+
+/***/ "./node_modules/class-variance-authority/dist/index.mjs":
+/*!**************************************************************!*\
+  !*** ./node_modules/class-variance-authority/dist/index.mjs ***!
+  \**************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   cva: () => (/* binding */ cva),
+/* harmony export */   cx: () => (/* binding */ cx)
+/* harmony export */ });
+/* harmony import */ var clsx__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! clsx */ "./node_modules/class-variance-authority/node_modules/clsx/dist/clsx.mjs");
+
+const falsyToString = (value)=>typeof value === "boolean" ? "".concat(value) : value === 0 ? "0" : value;
+const cx = clsx__WEBPACK_IMPORTED_MODULE_0__.clsx;
+const cva = (base, config)=>{
+    return (props)=>{
+        var ref;
+        if ((config === null || config === void 0 ? void 0 : config.variants) == null) return cx(base, props === null || props === void 0 ? void 0 : props.class, props === null || props === void 0 ? void 0 : props.className);
+        const { variants , defaultVariants  } = config;
+        const getVariantClassNames = Object.keys(variants).map((variant)=>{
+            const variantProp = props === null || props === void 0 ? void 0 : props[variant];
+            const defaultVariantProp = defaultVariants === null || defaultVariants === void 0 ? void 0 : defaultVariants[variant];
+            if (variantProp === null) return null;
+            const variantKey = falsyToString(variantProp) || falsyToString(defaultVariantProp);
+            return variants[variant][variantKey];
+        });
+        const propsWithoutUndefined = props && Object.entries(props).reduce((acc, param)=>{
+            let [key, value] = param;
+            if (value === undefined) {
+                return acc;
+            }
+            acc[key] = value;
+            return acc;
+        }, {});
+        const getCompoundVariantClassNames = config === null || config === void 0 ? void 0 : (ref = config.compoundVariants) === null || ref === void 0 ? void 0 : ref.reduce((acc, param1)=>{
+            let { class: cvClass , className: cvClassName , ...compoundVariantOptions } = param1;
+            return Object.entries(compoundVariantOptions).every((param)=>{
+                let [key, value] = param;
+                return Array.isArray(value) ? value.includes({
+                    ...defaultVariants,
+                    ...propsWithoutUndefined
+                }[key]) : ({
+                    ...defaultVariants,
+                    ...propsWithoutUndefined
+                })[key] === value;
+            }) ? [
+                ...acc,
+                cvClass,
+                cvClassName
+            ] : acc;
+        }, []);
+        return cx(base, getVariantClassNames, getCompoundVariantClassNames, props === null || props === void 0 ? void 0 : props.class, props === null || props === void 0 ? void 0 : props.className);
+    };
+};
+
+
+//# sourceMappingURL=index.mjs.map
+
+/***/ }),
+
+/***/ "./node_modules/class-variance-authority/node_modules/clsx/dist/clsx.mjs":
+/*!*******************************************************************************!*\
+  !*** ./node_modules/class-variance-authority/node_modules/clsx/dist/clsx.mjs ***!
+  \*******************************************************************************/
+/***/ ((__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   clsx: () => (/* binding */ clsx),
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+function r(e){var t,f,n="";if("string"==typeof e||"number"==typeof e)n+=e;else if("object"==typeof e)if(Array.isArray(e))for(t=0;t<e.length;t++)e[t]&&(f=r(e[t]))&&(n&&(n+=" "),n+=f);else for(t in e)e[t]&&(n&&(n+=" "),n+=t);return n}function clsx(){for(var e,t,f=0,n="";f<arguments.length;)(e=arguments[f++])&&(t=r(e))&&(n&&(n+=" "),n+=t);return n}/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (clsx);
 
 /***/ }),
 
@@ -49176,7 +50613,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-dom/client */ "./node_modules/react-dom/client.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _App__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./App */ "./src/App.js");
+/* harmony import */ var _App__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./App */ "./src/App.tsx");
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/dist/index.js");
 
 

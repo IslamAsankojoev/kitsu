@@ -11,8 +11,9 @@ import { Routes, Route } from "react-router-dom";
 const App = () => {
   return (
     <React.Fragment>
+      <div className='flex flex-col'>
       <Header />
-      <div className="container mx-auto my-5">
+      <div className="container mx-auto my-5 flex-grow justify-between">
       <Routes>
           <Route index element={<Home />} />
           <Route path="about" element={<About />} />
@@ -22,6 +23,7 @@ const App = () => {
       </Routes>
       </div>
       <Footer />
+      </div>
     </React.Fragment>
   )
 }

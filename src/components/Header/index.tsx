@@ -39,7 +39,7 @@ const Header = () => {
   }, [theme])
 
   return (
-    <div className="bg-neutral-100 dark:bg-neutral-900/90 shadow-sm py-4 backdrop-blur-md sticky top-0 z-10 shadow-neutral-200 dark:shadow-neutral-800">
+    <div className="bg-neutral-100/80 dark:bg-neutral-950/70 shadow-sm py-4 backdrop-blur-md sticky top-0 z-10 shadow-neutral-200 dark:shadow-neutral-800">
       <div className="container mx-auto flex gap-10 justify-between items-center">
         <div className='flex gap-10'>
         <Link to='/' ><h1 className="font-extrabold text-xl tracking-widest">KITSU</h1></Link>
